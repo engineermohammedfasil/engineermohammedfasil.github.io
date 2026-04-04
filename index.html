@@ -39,7 +39,8 @@ nav.scrolled{padding:1rem 3rem}
 .hero-eyebrow{font-size:.75rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--g);margin-bottom:1.5rem;opacity:0;animation:fadeIn .7s ease forwards .2s}
 .hero h1{font-family:var(--fd);font-size:clamp(2.6rem,5.5vw,4rem);font-weight:400;line-height:1.15;color:var(--t1);margin-bottom:1.8rem;opacity:0;animation:fadeIn .7s ease forwards .35s}
 .hero-subtitle{font-family:var(--fd);font-size:clamp(1.1rem,2vw,1.35rem);font-weight:400;font-style:italic;color:var(--g);line-height:1.5;margin-bottom:1.8rem;opacity:0;animation:fadeIn .7s ease forwards .5s}
-.hero-body{font-size:1rem;color:var(--t2);line-height:1.85;max-width:540px;margin-bottom:2.5rem;opacity:0;animation:fadeIn .7s ease forwards .65s}
+.hero-body{font-size:1rem;color:var(--t2);line-height:1.85;max-width:540px;margin-bottom:1.2rem;opacity:0;animation:fadeIn .7s ease forwards .65s}
+.hero-proof{font-size:.88rem;font-weight:500;color:var(--g);letter-spacing:.3px;margin-bottom:2.5rem;opacity:0;animation:fadeIn .7s ease forwards .72s}
 .hero-actions{display:flex;gap:1.2rem;flex-wrap:wrap;opacity:0;animation:fadeIn .7s ease forwards .8s}
 .btn-gold{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;background:var(--g);color:var(--nd);font-size:.8rem;font-weight:600;letter-spacing:.5px;border:none;transition:background .3s}
 .btn-gold:hover{background:var(--gl);opacity:1}
@@ -94,6 +95,7 @@ nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-toggle{display:block}
 .nav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}.nav-toggle.active span:nth-child(2){opacity:0}.nav-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
 .hero{padding:6rem 1.5rem 3rem}.hero-inner{grid-template-columns:1fr;gap:2rem}.hero-photo-wrap{order:-1;text-align:center}.hero-photo{width:170px;height:170px;margin:0 auto}
 .container,.divider{padding:0 1.5rem}.spacer{padding:4rem 0}.purpose{padding:5rem 1.5rem}.impact-grid{grid-template-columns:1fr}.cred-grid{grid-template-columns:1fr}.contact{padding:5rem 1.5rem 3rem}
+.exp-programmes div[style*="grid-template-columns"]{grid-template-columns:1fr !important}
 }
 </style>
 </head>
@@ -117,6 +119,7 @@ nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-toggle{display:block}
 <h1>Quality Governance<br>for Complex<br>Construction Programs</h1>
 <p class="hero-subtitle">I help large-scale construction projects move beyond compliance — by building quality systems that actually work on site.</p>
 <p class="hero-body">Across infrastructure, aviation, oil &amp; gas, and heritage developments, I've led quality governance on multi-billion-riyal programs, improving performance where it matters most: fewer NCRs, faster approvals, and stronger control over delivery.</p>
+<p class="hero-proof">Reduced NCRs by 60% · Improved rejection rates by 70% · Optimised submittals by 93%</p>
 <div class="hero-actions">
 <a href="#impact" class="btn-gold">See Impact</a>
 <a href="https://www.linkedin.com/in/engineermohammedfasil/" target="_blank" rel="noopener" class="btn-outline">LinkedIn</a>
@@ -140,11 +143,11 @@ nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-toggle{display:block}
 <h2 class="heading reveal">Quality issues on major projects are rarely caused by lack of procedures. They happen when systems <em>don't translate into execution.</em></h2>
 <p class="body-text reveal">My work focuses on closing that gap.</p>
 <div class="service-list">
-<div class="service-item reveal">Establishing ISO 9001-aligned quality management systems that are practical, not theoretical</div>
-<div class="service-item reveal">Structuring submittal, inspection, and approval workflows for clarity and control</div>
-<div class="service-item reveal">Driving NCR reduction through data-led root cause analysis</div>
-<div class="service-item reveal">Building KPI dashboards that reflect real project performance</div>
-<div class="service-item reveal">Aligning contractors, consultants, and PMC teams under a unified quality approach</div>
+<div class="service-item reveal">Designing quality systems that reduce NCR recurrence — not just track it</div>
+<div class="service-item reveal">Structuring submittal and approval workflows to improve decision speed and clarity</div>
+<div class="service-item reveal">Using trend data and root cause analysis to eliminate recurring failures at source</div>
+<div class="service-item reveal">Building KPI frameworks that reflect actual project performance — not just reporting metrics</div>
+<div class="service-item reveal">Aligning contractors, consultants, and PMC teams under a unified quality system</div>
 </div>
 </div>
 </section>
@@ -178,6 +181,11 @@ nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-toggle{display:block}
 </div>
 </div>
 </div>
+<div class="programmes reveal" style="margin-top:3rem;text-align:center">
+<div style="font-size:.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:.8rem">Programmes delivered for</div>
+<div style="font-size:.95rem;color:var(--t2);letter-spacing:.3px">Diriyah Company &nbsp;·&nbsp; Qatar Rail &nbsp;·&nbsp; MATAR &nbsp;·&nbsp; Qatar Energy &nbsp;·&nbsp; Ashghal</div>
+</div>
+</div>
 </section>
 
 <div class="divider"><div class="divider-line"></div></div>
@@ -187,10 +195,11 @@ nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-toggle{display:block}
 <div class="eyebrow reveal">My Approach</div>
 <h2 class="heading reveal">Most projects treat quality as a control function. I approach it as <em>a system.</em></h2>
 <p class="body-text reveal">That means:</p>
-<div class="approach-item reveal">Looking beyond individual NCRs to identify patterns</div>
+<div class="approach-item reveal">Looking beyond individual NCRs to identify patterns and systemic gaps</div>
 <div class="approach-item reveal">Shifting from reactive corrections to preventive control</div>
-<div class="approach-item reveal">Creating visibility for stakeholders through structured reporting</div>
+<div class="approach-item reveal">Creating visibility through structured, decision-focused reporting</div>
 <div class="approach-item reveal">Ensuring quality processes support delivery — not slow it down</div>
+<p class="body-text reveal" style="margin-top:2rem;font-style:italic;color:var(--t2)">Most quality systems don't fail because they are incomplete. They fail because they are not used the way they were designed.</p>
 </div>
 </section>
 
@@ -208,6 +217,30 @@ nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-toggle{display:block}
 <span class="exp-tag">Oil &amp; Gas Facilities</span>
 <span class="exp-tag">Urban &amp; Cultural Developments</span>
 <span class="exp-tag">Heritage Construction</span>
+</div>
+<div class="exp-programmes reveal" style="margin-top:2rem">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem">
+<div style="padding:.8rem 1rem;border-left:2px solid var(--nb)">
+<div style="font-size:.65rem;color:var(--gd);letter-spacing:1.5px;text-transform:uppercase;font-weight:600">Current</div>
+<div style="font-size:.88rem;color:var(--t1)">Diriyah Development Programme</div>
+<div style="font-size:.75rem;color:var(--t3)">SAR 5.55B · 31 Buildings + Infrastructure · QA/QC Manager</div>
+</div>
+<div style="padding:.8rem 1rem;border-left:2px solid var(--nb)">
+<div style="font-size:.65rem;color:var(--gd);letter-spacing:1.5px;text-transform:uppercase;font-weight:600">Qatar</div>
+<div style="font-size:.88rem;color:var(--t1)">Hamad International Airport Expansion</div>
+<div style="font-size:.75rem;color:var(--t3)">QAR 3.1B · Package-0012 · QA/QC Engineer</div>
+</div>
+<div style="padding:.8rem 1rem;border-left:2px solid var(--nb)">
+<div style="font-size:.65rem;color:var(--gd);letter-spacing:1.5px;text-transform:uppercase;font-weight:600">Qatar</div>
+<div style="font-size:.88rem;color:var(--t1)">Doha Metro Programme</div>
+<div style="font-size:.75rem;color:var(--t3)">QAR 10B · Red &amp; Green Lines · 8 Years</div>
+</div>
+<div style="padding:.8rem 1rem;border-left:2px solid var(--nb)">
+<div style="font-size:.65rem;color:var(--gd);letter-spacing:1.5px;text-transform:uppercase;font-weight:600">Qatar</div>
+<div style="font-size:.88rem;color:var(--t1)">Qatar Energy &amp; Ashghal — Multiple Projects</div>
+<div style="font-size:.75rem;color:var(--t3)">Tank Farm Upgrades · Multistorey Car Park · Lusail Security Complex</div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -260,7 +293,7 @@ nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-toggle{display:block}
 <section id="contact" class="contact">
 <div class="eyebrow reveal">Let's Connect</div>
 <h2 class="heading reveal" style="text-align:center">Stronger control over <em>quality performance</em></h2>
-<p class="contact-body reveal">If you're working on complex construction programs and need stronger control over quality performance, I'm open to conversations around PMC roles, advisory, and quality leadership across the GCC.</p>
+<p class="contact-body reveal">If you're managing a complex construction program and need stronger control over quality performance, let's connect. I'm open to discussions around PMC roles, advisory, and quality leadership across the GCC.</p>
 <div class="contact-links reveal">
 <a href="https://www.linkedin.com/in/engineermohammedfasil/" target="_blank" rel="noopener" class="contact-link">
 <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
