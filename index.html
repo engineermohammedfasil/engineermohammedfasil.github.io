@@ -14,11 +14,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--nd:#060D18;--n:#0B1726;--nm:#101F35;--nb:#1C3050;--g:#C9A227;--gl:#D4B94E;--gs:rgba(201,162,39,0.08);--gd:#8B7420;--t1:#E4E8ED;--t2:#94A3B8;--t3:#64748B;--fd:'Playfair Display',Georgia,serif;--fb:'Source Sans 3',-apple-system,sans-serif}
+:root{--nd:#FAFAF8;--n:#F2F1ED;--nm:#E8E7E3;--nb:#D4D3CF;--g:#9A7B1A;--gl:#7D6415;--gs:rgba(154,123,26,0.06);--gd:#B8941F;--t1:#1A1A18;--t2:#4A4A45;--t3:#7A7A73;--fd:'Playfair Display',Georgia,serif;--fb:'Source Sans 3',-apple-system,sans-serif}
 html{scroll-behavior:smooth}
 body{background:var(--nd);color:var(--t1);font-family:var(--fb);font-weight:300;line-height:1.8;overflow-x:hidden}
 a{color:var(--g);text-decoration:none;transition:opacity .3s}a:hover{opacity:.8}
-nav{position:fixed;top:0;width:100%;z-index:100;padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(6,13,24,.9);backdrop-filter:blur(24px);border-bottom:1px solid rgba(28,48,80,.3);transition:padding .3s}
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(250,250,248,.92);backdrop-filter:blur(24px);border-bottom:1px solid rgba(212,211,207,.5);transition:padding .3s}
 nav.scrolled{padding:1rem 3rem}
 .nav-brand{font-family:var(--fd);font-size:1.1rem;font-weight:500;color:var(--g)}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
@@ -42,19 +42,19 @@ nav.scrolled{padding:1rem 3rem}
 .hero-body{font-size:1rem;color:var(--t2);line-height:1.85;max-width:540px;margin-bottom:1.2rem;opacity:0;animation:fadeIn .7s ease forwards .65s}
 .hero-proof{font-size:.88rem;font-weight:500;color:var(--g);letter-spacing:.3px;margin-bottom:2.5rem;opacity:0;animation:fadeIn .7s ease forwards .72s}
 .hero-actions{display:flex;gap:1.2rem;flex-wrap:wrap;opacity:0;animation:fadeIn .7s ease forwards .8s}
-.btn-gold{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;background:var(--g);color:var(--nd);font-size:.8rem;font-weight:600;letter-spacing:.5px;border:none;transition:background .3s}
+.btn-gold{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;background:var(--g);color:#FAFAF8;font-size:.8rem;font-weight:600;letter-spacing:.5px;border:none;transition:background .3s}
 .btn-gold:hover{background:var(--gl);opacity:1}
 .btn-outline{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;background:transparent;color:var(--t2);font-size:.8rem;font-weight:500;letter-spacing:.5px;border:1px solid var(--nb);transition:all .3s}
 .btn-outline:hover{border-color:var(--g);color:var(--g);opacity:1}
 .hero-photo-wrap{opacity:0;animation:fadeIn .7s ease forwards .4s}
-.hero-photo{width:240px;height:240px;border-radius:50%;overflow:hidden;border:2px solid var(--gd);margin-left:auto}
+.hero-photo{width:240px;height:240px;border-radius:50%;overflow:hidden;border:2px solid var(--g);margin-left:auto}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(10%);transition:filter .4s}
 .hero-photo:hover img{filter:grayscale(0%)}
 .purpose{text-align:center;padding:7rem 3rem;max-width:750px;margin:0 auto}
 .purpose-text{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:400;line-height:1.55;color:var(--t1)}
 .purpose-text em{font-style:italic;color:var(--g)}
 .service-list{margin-top:1.5rem}
-.service-item{padding:1rem 0;border-bottom:1px solid rgba(28,48,80,.4);font-size:.95rem;color:var(--t2);line-height:1.7;padding-left:1.2rem;position:relative}
+.service-item{padding:1rem 0;border-bottom:1px solid var(--nb);font-size:.95rem;color:var(--t2);line-height:1.7;padding-left:1.2rem;position:relative}
 .service-item::before{content:'';position:absolute;left:0;top:1.45rem;width:5px;height:5px;background:var(--gd);border-radius:50%}
 .service-item:last-child{border-bottom:none}
 .impact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem}
@@ -63,7 +63,7 @@ nav.scrolled{padding:1rem 3rem}
 .impact-num{font-family:var(--fd);font-size:2.8rem;font-weight:600;color:var(--g);line-height:1;margin-bottom:.5rem}
 .impact-label{font-size:.9rem;color:var(--t1);font-weight:400;margin-bottom:.4rem}
 .impact-desc{font-size:.78rem;color:var(--t3);line-height:1.65}
-.approach-item{padding:1rem 0;border-bottom:1px solid rgba(28,48,80,.4);font-size:.95rem;color:var(--t2);line-height:1.7;padding-left:1.2rem;position:relative}
+.approach-item{padding:1rem 0;border-bottom:1px solid var(--nb);font-size:.95rem;color:var(--t2);line-height:1.7;padding-left:1.2rem;position:relative}
 .approach-item::before{content:'';position:absolute;left:0;top:1.45rem;width:5px;height:5px;background:var(--gd);border-radius:50%}
 .approach-item:last-child{border-bottom:none}
 .exp-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
@@ -84,14 +84,14 @@ nav.scrolled{padding:1rem 3rem}
 .contact-link{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.4rem;border:1px solid var(--nb);color:var(--t2);font-size:.8rem;transition:all .3s}
 .contact-link:hover{border-color:var(--g);color:var(--g);opacity:1}
 .contact-link svg{width:14px;height:14px;fill:currentColor}
-footer{padding:2rem 3rem;text-align:center;border-top:1px solid rgba(28,48,80,.3)}
+footer{padding:2rem 3rem;text-align:center;border-top:1px solid var(--nb)}
 footer p{font-size:.7rem;color:var(--t3)}
 @keyframes fadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 @media(max-width:768px){
 nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-toggle{display:block}
-.nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(6,13,24,.97);backdrop-filter:blur(20px);padding:1.5rem;gap:1rem;border-bottom:1px solid var(--nb)}
+.nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(250,250,248,.97);backdrop-filter:blur(20px);padding:1.5rem;gap:1rem;border-bottom:1px solid var(--nb)}
 .nav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}.nav-toggle.active span:nth-child(2){opacity:0}.nav-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
 .hero{padding:6rem 1.5rem 3rem}.hero-inner{grid-template-columns:1fr;gap:2rem}.hero-photo-wrap{order:-1;text-align:center}.hero-photo{width:170px;height:170px;margin:0 auto}
 .container,.divider{padding:0 1.5rem}.spacer{padding:4rem 0}.purpose{padding:5rem 1.5rem}.impact-grid{grid-template-columns:1fr}.cred-grid{grid-template-columns:1fr}.contact{padding:5rem 1.5rem 3rem}
@@ -118,7 +118,7 @@ nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-toggle{display:block}
 <div class="hero-eyebrow">Mohammed Fasil</div>
 <h1>Quality Governance<br>for Complex<br>Construction Programs</h1>
 <p class="hero-subtitle">I help large-scale construction projects move beyond compliance — by building quality systems that actually work on site.</p>
-<p class="hero-body">Across infrastructure, aviation, oil &amp; gas, and heritage developments, I've led quality governance on multi-billion-riyal programs, improving performance where it matters most: fewer NCRs, faster approvals, and stronger control over delivery.</p>
+<p class="hero-body">Across infrastructure, aviation, oil &amp; gas, and heritage developments, I've led quality governance on multi-billion-riyal programs, improving performance where it matters most: decision speed, risk control, and delivery confidence.</p>
 <p class="hero-proof">Reduced NCRs by 60% · Improved rejection rates by 70% · Optimised submittals by 93%</p>
 <div class="hero-actions">
 <a href="#impact" class="btn-gold">See Impact</a>
@@ -199,7 +199,7 @@ nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-toggle{display:block}
 <div class="approach-item reveal">Shifting from reactive corrections to preventive control</div>
 <div class="approach-item reveal">Creating visibility through structured, decision-focused reporting</div>
 <div class="approach-item reveal">Ensuring quality processes support delivery — not slow it down</div>
-<p class="body-text reveal" style="margin-top:2rem;font-style:italic;color:var(--t2)">Most quality systems don't fail because they are incomplete. They fail because they are not used the way they were designed.</p>
+<p class="body-text reveal" style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--nb);font-style:italic;color:var(--t2)">Most quality systems don't fail because they are incomplete. They fail because they are not used the way they were designed.</p>
 </div>
 </section>
 
@@ -293,7 +293,7 @@ nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-toggle{display:block}
 <section id="contact" class="contact">
 <div class="eyebrow reveal">Let's Connect</div>
 <h2 class="heading reveal" style="text-align:center">Stronger control over <em>quality performance</em></h2>
-<p class="contact-body reveal">If you're managing a complex construction program and need stronger control over quality performance, let's connect. I'm open to discussions around PMC roles, advisory, and quality leadership across the GCC.</p>
+<p class="contact-body reveal">If you're managing a complex construction program and need stronger control over quality performance, let's connect.</p>
 <div class="contact-links reveal">
 <a href="https://www.linkedin.com/in/engineermohammedfasil/" target="_blank" rel="noopener" class="contact-link">
 <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
