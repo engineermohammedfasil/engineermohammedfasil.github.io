@@ -1,384 +1,667 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mohammed Fasil | The Quality Mindset</title>
-<meta name="description" content="Mohammed Fasil — Quality governance for complex construction programs. Building quality systems that actually work on site.">
+<meta name="description" content="Mohammed Fasil — Quality governance for complex construction programs. I help large-scale projects move beyond compliance by building quality systems that actually work on site.">
 <meta property="og:title" content="Mohammed Fasil | The Quality Mindset">
 <meta property="og:description" content="Quality governance for complex construction programs. Fewer NCRs, faster approvals, stronger control over delivery.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://engineermohammedfasil.github.io">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --pri:#1B365D;--pri-l:#2e476f;--sec:#C9A227;--bg:#faf9f5;--surf:#ffffff;
-  --txt:#1b1c1a;--txt2:#4a4a45;--txt3:#7a7a73;--border:#1B365D;
-  --fd:'Archivo Narrow',sans-serif;--fb:'Roboto Condensed',sans-serif;
-}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--txt);font-family:var(--fb);font-weight:300;line-height:1.7;text-transform:uppercase;letter-spacing:-.02em;
-  background-image:linear-gradient(rgba(27,54,93,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(27,54,93,.06) 1px,transparent 1px);
-  background-size:20px 20px;
-}
-a{color:var(--sec);text-decoration:none;transition:all .3s}
-a:hover{opacity:.8}
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Legend bar (top) */
-.legend-bar{position:fixed;top:0;width:100%;z-index:100;background:var(--sec);color:var(--pri);padding:.6rem 2rem;display:flex;justify-content:space-between;align-items:center;font-family:var(--fd);font-weight:700;font-size:.85rem;border-bottom:2px solid var(--pri)}
-.legend-metrics{display:flex;gap:2rem;align-items:center}
-.legend-label{font-size:.7rem;opacity:.6;margin-right:.3rem}
-.legend-tag{background:var(--pri);color:white;padding:.15rem .5rem;font-size:.75rem}
-.legend-right{display:flex;align-items:center;gap:1.5rem;font-size:.75rem}
-.legend-dot{width:8px;height:8px;border-radius:50%;background:#16a34a;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  :root {
+    --primary: #002046;
+    --primary-container: #1b365d;
+    --on-primary: #ffffff;
+    --on-primary-container: #87a0cd;
+    --secondary: #755b00;
+    --secondary-container: #fed255;
+    --on-secondary-container: #241a00;
+    --surface: #fbf9f8;
+    --surface-dim: #dcd9d9;
+    --surface-container-low: #f6f3f2;
+    --surface-container: #f0eded;
+    --surface-container-high: #eae8e7;
+    --surface-container-highest: #e4e2e1;
+    --on-surface: #1b1c1c;
+    --on-surface-variant: #44474e;
+    --outline: #74777f;
+    --outline-variant: #c4c6cf;
+    --ff-headline: 'Manrope', sans-serif;
+    --ff-body: 'Inter', sans-serif;
+  }
 
-/* Nav */
-nav{position:fixed;top:2.4rem;width:100%;z-index:90;background:rgba(250,249,245,.95);backdrop-filter:blur(12px);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--pri);transition:padding .3s}
-nav.scrolled{padding:.7rem 2rem}
-.nav-brand{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--pri);letter-spacing:.05em}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{font-family:var(--fd);color:var(--txt2);font-size:.85rem;font-weight:600;letter-spacing:.1em;transition:color .3s}
-.nav-links a:hover{color:var(--sec)}
-.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
-.nav-toggle span{display:block;width:20px;height:2px;background:var(--pri);margin:4px 0;transition:all .3s}
+  html { scroll-behavior: smooth; }
 
-/* Layout */
-.container{max-width:1100px;margin:0 auto;padding:0 2rem}
-.section{padding:6rem 2rem}
+  body {
+    background: var(--surface);
+    color: var(--on-surface);
+    font-family: var(--ff-body);
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
 
-/* Section headers - schematic style */
-.section-header{display:flex;align-items:baseline;justify-content:space-between;border-bottom:3px solid var(--pri);padding-bottom:.8rem;margin-bottom:3rem}
-.section-title{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--pri);letter-spacing:.02em}
-.section-tag{font-family:var(--fd);font-size:.75rem;font-weight:700;background:var(--pri);color:var(--sec);padding:.2rem .6rem}
+  a { text-decoration: none; transition: opacity .3s, color .3s; }
 
-/* Schematic card */
-.s-card{border:2px solid var(--pri);position:relative;overflow:hidden;background:var(--surf)}
-.s-card::before{content:'';position:absolute;top:0;left:0;width:12px;height:12px;border-left:2px solid var(--sec);border-top:2px solid var(--sec)}
-.s-card::after{content:'';position:absolute;bottom:0;right:0;width:12px;height:12px;border-right:2px solid var(--sec);border-bottom:2px solid var(--sec)}
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
 
-/* Hero */
-.hero{min-height:100vh;padding:8rem 2rem 4rem;display:flex;align-items:center}
-.hero-inner{max-width:1200px;margin:0 auto;width:100%}
-.hero-card{display:grid;grid-template-columns:1fr 340px;border:2px solid var(--pri);background:var(--surf)}
-.hero-content{padding:3rem 3.5rem;border-right:2px solid var(--pri)}
-.hero-spec{font-family:var(--fd);font-size:.8rem;font-weight:700;color:var(--sec);background:var(--pri);padding:.2rem .6rem;display:inline-block;margin-bottom:1.5rem}
-.hero h1{font-family:var(--fd);font-size:clamp(3rem,7vw,6rem);font-weight:700;color:var(--pri);line-height:.9;margin-bottom:1.5rem;letter-spacing:-.02em}
-.hero-subtitle{font-family:var(--fb);font-size:1.15rem;font-weight:300;color:var(--txt2);line-height:1.6;text-transform:lowercase;margin-bottom:1rem;max-width:560px}
-.hero-body{font-family:var(--fb);font-size:1rem;font-weight:300;color:var(--txt3);line-height:1.7;text-transform:lowercase;margin-bottom:1.5rem;max-width:560px}
-.hero-proof{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--sec);margin-bottom:2rem;letter-spacing:.05em}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-pri{font-family:var(--fd);padding:.8rem 2rem;background:var(--pri);color:white;font-size:.9rem;font-weight:700;border:2px solid var(--pri);letter-spacing:.05em;transition:all .3s;cursor:pointer}
-.btn-pri:hover{background:var(--surf);color:var(--pri);opacity:1}
-.btn-sec{font-family:var(--fd);padding:.8rem 2rem;background:transparent;color:var(--pri);font-size:.9rem;font-weight:700;border:2px solid var(--pri);letter-spacing:.05em;transition:all .3s;cursor:pointer}
-.btn-sec:hover{background:var(--pri);color:white;opacity:1}
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(251,249,248,.85);
+    backdrop-filter: blur(24px);
+    box-shadow: 0 20px 40px rgba(27,28,28,.05);
+    border-bottom: 1px solid rgba(196,198,207,.3);
+  }
+  .nav-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1280px; margin: 0 auto; padding: 0 2.5rem; height: 5rem;
+  }
+  .nav-brand {
+    font-family: var(--ff-headline); font-size: 1.5rem; font-weight: 800;
+    letter-spacing: -.05em; color: var(--primary);
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--ff-headline); font-weight: 700; font-size: .875rem;
+    letter-spacing: -.01em; color: rgba(27,28,28,.55);
+    transition: color .3s;
+  }
+  .nav-links a:hover { color: var(--primary); }
+  .nav-links a.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: .25rem;
+  }
+  .nav-cta {
+    display: inline-block;
+    background: var(--primary); color: var(--on-primary);
+    font-family: var(--ff-headline); font-weight: 700; font-size: .875rem;
+    padding: .625rem 1.5rem; border-radius: .75rem;
+    transition: opacity .3s;
+  }
+  .nav-cta:hover { opacity: .8; }
+  .nav-toggle {
+    display: none; background: none; border: none; cursor: pointer;
+    color: var(--primary);
+  }
+  .nav-toggle .material-symbols-outlined { font-size: 1.5rem; }
 
-.hero-sidebar{display:flex;flex-direction:column}
-.hero-photo-area{flex:1;display:flex;align-items:center;justify-content:center;padding:2rem;border-bottom:2px solid var(--pri);background:rgba(27,54,93,.03)}
-.hero-photo{width:220px;height:220px;border-radius:50%;overflow:hidden;border:3px solid var(--pri)}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.hero-stat{padding:1.5rem 2rem;background:var(--sec);color:var(--pri)}
-.hero-stat-num{font-family:var(--fd);font-size:3rem;font-weight:700;line-height:1}
-.hero-stat-label{font-family:var(--fd);font-size:.7rem;font-weight:700;letter-spacing:.2em;opacity:.7}
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--primary-container);
+    display: flex; align-items: center;
+    padding: 8rem 2.5rem 6rem;
+    position: relative; overflow: hidden;
+  }
+  .hero-inner {
+    max-width: 1280px; margin: 0 auto; width: 100%;
+    display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center;
+    position: relative; z-index: 1;
+  }
+  .hero-eyebrow {
+    font-family: var(--ff-body); font-size: .75rem; font-weight: 500;
+    letter-spacing: .2em; text-transform: uppercase;
+    color: var(--on-primary-container); margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp .6s ease forwards .1s;
+  }
+  .hero h1 {
+    font-family: var(--ff-headline); font-weight: 800;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: .9; letter-spacing: -.04em;
+    color: var(--on-primary);
+    margin-bottom: 2rem;
+    opacity: 0; animation: fadeUp .6s ease forwards .25s;
+  }
+  .hero-subtitle {
+    font-family: var(--ff-body); font-weight: 300;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--on-primary-container); line-height: 1.8;
+    max-width: 36rem; margin-bottom: 2.5rem;
+    opacity: 0; animation: fadeUp .6s ease forwards .4s;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp .6s ease forwards .55s;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: var(--secondary-container); color: var(--on-secondary-container);
+    font-family: var(--ff-headline); font-weight: 700; font-size: .9rem;
+    padding: .875rem 2rem; border-radius: .75rem; transition: opacity .3s;
+  }
+  .btn-primary:hover { opacity: .85; }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: transparent; color: var(--on-primary);
+    font-family: var(--ff-headline); font-weight: 700; font-size: .9rem;
+    padding: .875rem 2rem; border-radius: .75rem;
+    border: 1px solid rgba(135,160,205,.3);
+    transition: background .3s;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,.08); }
+  .hero-photo-wrap {
+    opacity: 0; animation: fadeUp .6s ease forwards .3s;
+  }
+  .hero-photo {
+    width: 220px; height: 220px; border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(135,160,205,.4);
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .hero-watermark {
+    position: absolute; right: -2rem; bottom: -4rem;
+    font-family: var(--ff-headline); font-weight: 800;
+    font-size: 40rem; color: rgba(255,255,255,.02);
+    line-height: 1; user-select: none; pointer-events: none;
+    letter-spacing: -.05em;
+  }
 
-/* Purpose - blueprint band */
-.purpose-band{background:var(--pri);padding:4rem 2rem;text-align:center}
-.purpose-text{font-family:var(--fd);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:700;color:white;line-height:1.4;max-width:800px;margin:0 auto}
-.purpose-text em{font-style:normal;color:var(--sec)}
+  /* ── SECTION SHELL ── */
+  .section { padding: 8rem 2.5rem; }
+  .section-inner { max-width: 1280px; margin: 0 auto; }
+  .eyebrow-label {
+    font-family: var(--ff-body); font-size: .75rem; font-weight: 500;
+    letter-spacing: .2em; text-transform: uppercase;
+    color: var(--secondary); margin-bottom: 1.5rem; display: block;
+  }
+  .section-heading {
+    font-family: var(--ff-headline); font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--primary); letter-spacing: -.03em;
+    line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .section-sub {
+    font-size: 1.05rem; color: var(--on-surface-variant);
+    line-height: 1.85; max-width: 44rem; margin-bottom: 2.5rem;
+  }
+  .rule {
+    width: 6rem; height: 2px;
+    background: var(--secondary); margin-bottom: 2rem;
+  }
 
-/* Service items in grid cards */
-.service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;border:2px solid var(--pri);margin-top:2rem}
-.service-card{padding:2rem;border-right:2px solid var(--pri);border-bottom:2px solid var(--pri);background:var(--surf);transition:background .3s}
-.service-card:hover{background:rgba(27,54,93,.03)}
-.service-id{font-family:var(--fd);font-size:.75rem;font-weight:700;color:var(--sec);margin-bottom:1rem;letter-spacing:.15em}
-.service-text{font-family:var(--fb);font-size:1rem;font-weight:400;color:var(--txt2);line-height:1.7;text-transform:lowercase}
+  /* ── PURPOSE BAND ── */
+  .purpose-band {
+    background: #f5edd6;
+    padding: 7rem 2.5rem;
+    text-align: center;
+  }
+  .purpose-text {
+    font-family: var(--ff-headline); font-weight: 800;
+    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+    color: var(--primary); letter-spacing: -.03em;
+    line-height: 1.3; max-width: 680px; margin: 0 auto;
+  }
+  .purpose-text em { font-style: normal; color: var(--secondary); }
 
-/* Impact */
-.impact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:2px solid var(--pri);margin-top:2rem}
-.impact-card{padding:2.5rem;border-right:2px solid var(--pri);border-bottom:2px solid var(--pri);background:var(--surf);transition:background .3s}
-.impact-card:hover{background:rgba(27,54,93,.03)}
-.impact-card:nth-child(odd).featured{background:var(--pri);color:white}
-.impact-num{font-family:var(--fd);font-size:3.5rem;font-weight:700;color:var(--sec);line-height:1;margin-bottom:.5rem}
-.impact-label{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--pri);margin-bottom:.5rem;letter-spacing:.05em}
-.impact-desc{font-family:var(--fb);font-size:.95rem;color:var(--txt3);line-height:1.6;text-transform:lowercase}
-.programmes-bar{padding:1.5rem 2rem;background:var(--pri);color:white;font-family:var(--fd);text-align:center;border:2px solid var(--pri);border-top:none}
-.programmes-label{font-size:.75rem;font-weight:700;color:var(--sec);letter-spacing:.2em;margin-bottom:.5rem}
-.programmes-list{font-size:1rem;font-weight:400;letter-spacing:.05em;opacity:.8}
+  /* ── WHAT I DO ── */
+  .what-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: start; margin-top: 4rem;
+  }
+  .service-list { list-style: none; }
+  .service-item {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--outline-variant);
+    font-size: .95rem; color: var(--on-surface-variant);
+    line-height: 1.7; display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .service-item:last-child { border-bottom: none; }
+  .service-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--secondary); margin-top: .7rem; flex-shrink: 0;
+  }
 
-/* Approach */
-.approach-list{margin-top:2rem}
-.approach-item{padding:1.5rem 0 1.5rem 2rem;border-bottom:1px solid var(--pri);font-family:var(--fb);font-size:1.05rem;color:var(--txt2);line-height:1.7;text-transform:lowercase;position:relative}
-.approach-item::before{content:'';position:absolute;left:0;top:2rem;width:8px;height:8px;border:2px solid var(--sec);background:transparent}
-.approach-item:last-child{border-bottom:none}
-.approach-quote{margin-top:2.5rem;padding:2rem;background:var(--pri);color:var(--sec);font-family:var(--fd);font-size:1.15rem;font-weight:700;line-height:1.5;text-transform:lowercase;border:2px solid var(--sec)}
+  /* ── IMPACT ── */
+  .impact-section { background: var(--primary); }
+  .impact-section .section-heading { color: var(--on-primary); }
+  .impact-section .eyebrow-label { color: var(--on-primary-container); }
+  .impact-section .section-sub { color: var(--on-primary-container); }
+  .impact-bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: rgba(135,160,205,.15);
+    border-radius: 1rem; overflow: hidden;
+    border: 1px solid rgba(135,160,205,.15);
+    margin-top: 3rem;
+  }
+  .impact-card {
+    background: rgba(27,54,93,.6);
+    padding: 2.5rem;
+    transition: background .3s;
+  }
+  .impact-card:hover { background: rgba(27,54,93,.9); }
+  .impact-num {
+    font-family: var(--ff-headline); font-weight: 800;
+    font-size: 3rem; color: var(--secondary-container);
+    line-height: 1; margin-bottom: .75rem; letter-spacing: -.04em;
+  }
+  .impact-label {
+    font-family: var(--ff-headline); font-weight: 700;
+    font-size: .95rem; color: var(--on-primary);
+    margin-bottom: .5rem;
+  }
+  .impact-desc { font-size: .8rem; color: var(--on-primary-container); line-height: 1.65; }
 
-/* Experience */
-.exp-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
-.exp-tag{font-family:var(--fd);padding:.5rem 1.2rem;border:2px solid var(--pri);font-size:.85rem;font-weight:600;color:var(--pri)}
-.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--pri);margin-top:2rem}
-.exp-card{padding:1.5rem;border-right:2px solid var(--pri);border-bottom:2px solid var(--pri);background:var(--surf)}
-.exp-period{font-family:var(--fd);font-size:.8rem;font-weight:700;color:var(--sec);letter-spacing:.15em;margin-bottom:.3rem}
-.exp-name{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--pri);margin-bottom:.2rem}
-.exp-detail{font-family:var(--fb);font-size:.95rem;color:var(--txt3);text-transform:lowercase}
+  /* ── APPROACH ── */
+  .approach-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .approach-card {
+    background: var(--surface-container-low);
+    border: 1px solid var(--outline-variant);
+    border-radius: .75rem; padding: 2rem;
+    transition: border-color .3s, background .3s;
+    position: relative; overflow: hidden;
+  }
+  .approach-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--secondary);
+    transition: width .4s;
+  }
+  .approach-card:hover { border-color: var(--secondary); background: var(--surface-container); }
+  .approach-card:hover::after { width: 100%; }
+  .approach-icon {
+    font-size: 2rem; color: var(--secondary);
+    margin-bottom: 1rem; display: block;
+  }
+  .approach-title {
+    font-family: var(--ff-headline); font-weight: 700;
+    font-size: 1rem; color: var(--primary); margin-bottom: .5rem;
+  }
+  .approach-body { font-size: .9rem; color: var(--on-surface-variant); line-height: 1.7; }
 
-/* Credentials */
-.cred-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;border:2px solid var(--pri);margin-top:2rem}
-.cred-card{padding:2rem;border-right:2px solid var(--pri);border-bottom:2px solid var(--pri);background:var(--surf);position:relative;overflow:hidden;transition:background .3s}
-.cred-card:hover{background:rgba(27,54,93,.03)}
-.cred-card::before{content:'';position:absolute;top:0;left:0;width:10px;height:10px;border-left:2px solid var(--sec);border-top:2px solid var(--sec)}
-.cred-abbr{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--sec);margin-bottom:.4rem}
-.cred-name{font-family:var(--fb);font-size:1rem;color:var(--txt);margin-bottom:.2rem;text-transform:lowercase}
-.cred-issuer{font-family:var(--fb);font-size:.9rem;color:var(--txt3);margin-bottom:.6rem;text-transform:lowercase}
-.cred-verify{font-family:var(--fd);font-size:.8rem;font-weight:700;color:var(--pri);letter-spacing:.1em;border-bottom:1px solid var(--sec);padding-bottom:2px}
-.cred-verify:hover{color:var(--sec);opacity:1}
+  /* ── EXPERIENCE ── */
+  .exp-section { background: var(--surface-container-low); }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+  .exp-tag {
+    background: var(--surface-container-highest);
+    color: var(--on-surface-variant);
+    font-family: var(--ff-body); font-size: .75rem; font-weight: 500;
+    letter-spacing: .08em; text-transform: uppercase;
+    padding: .4rem 1rem; border-radius: 999px;
+  }
 
-/* Contact */
-.contact-band{background:var(--pri);padding:5rem 2rem;text-align:center;border:3px solid var(--sec)}
-.contact-tag{display:inline-block;border:2px solid var(--sec);color:var(--sec);font-family:var(--fd);font-size:.8rem;font-weight:700;padding:.3rem 1rem;margin-bottom:2rem;letter-spacing:.15em}
-.contact-heading{font-family:var(--fd);font-size:clamp(2.5rem,5vw,4rem);font-weight:700;color:white;margin-bottom:1.5rem;letter-spacing:-.02em}
-.contact-body{font-family:var(--fb);font-size:1.15rem;font-weight:300;color:rgba(255,255,255,.7);text-transform:lowercase;max-width:560px;margin:0 auto 2.5rem;line-height:1.7}
-.contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
-.btn-contact-pri{font-family:var(--fd);padding:.9rem 2.5rem;background:var(--sec);color:var(--pri);font-size:.9rem;font-weight:700;border:2px solid var(--sec);letter-spacing:.05em;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s;cursor:pointer}
-.btn-contact-pri:hover{background:transparent;color:var(--sec);opacity:1}
-.btn-contact-pri svg{width:16px;height:16px;fill:currentColor}
-.btn-contact-sec{font-family:var(--fd);padding:.9rem 2.5rem;background:transparent;color:rgba(255,255,255,.5);font-size:.9rem;font-weight:700;border:2px solid rgba(255,255,255,.3);letter-spacing:.05em;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s;cursor:pointer}
-.btn-contact-sec:hover{border-color:white;color:white;opacity:1}
-.btn-contact-sec svg{width:16px;height:16px;fill:currentColor}
+  /* ── CREDENTIALS ── */
+  .cred-bento {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--outline-variant);
+    border-radius: 1rem; overflow: hidden;
+    border: 1px solid var(--outline-variant);
+    margin-top: 3rem;
+  }
+  .cred-card {
+    background: var(--surface);
+    padding: 2.5rem;
+    transition: background .3s;
+    position: relative;
+  }
+  .cred-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--secondary);
+    transition: width .4s;
+  }
+  .cred-card:hover { background: var(--surface-container-low); }
+  .cred-card:hover::after { width: 100%; }
+  .cred-icon { font-size: 2.5rem; color: var(--secondary); margin-bottom: 1.25rem; display: block; }
+  .cred-abbr {
+    font-family: var(--ff-headline); font-weight: 800;
+    font-size: 1.15rem; color: var(--primary);
+    margin-bottom: .25rem; letter-spacing: -.02em;
+  }
+  .cred-name { font-size: .875rem; color: var(--on-surface); margin-bottom: .2rem; font-weight: 400; }
+  .cred-issuer { font-size: .75rem; color: var(--on-surface-variant); margin-bottom: .75rem; }
+  .cred-verify {
+    font-size: .7rem; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--secondary);
+    display: inline-flex; align-items: center; gap: .25rem;
+  }
+  .cred-verify:hover { color: var(--primary); }
 
-/* Footer */
-footer{padding:2rem;border-top:3px solid var(--pri)}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto}
-.footer-name{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--pri)}
-.footer-copy{font-family:var(--fd);font-size:.75rem;font-weight:700;color:var(--txt3)}
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--primary);
+    padding: 10rem 2.5rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .contact-section h2 {
+    font-family: var(--ff-headline); font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: var(--on-primary); letter-spacing: -.04em;
+    line-height: 1.05; max-width: 800px; margin: 0 auto 3rem;
+  }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .contact-link {
+    display: inline-flex; align-items: center; gap: .5rem;
+    border: 1px solid rgba(135,160,205,.25);
+    color: var(--on-primary-container);
+    font-family: var(--ff-body); font-size: .8rem; font-weight: 400;
+    padding: .625rem 1.25rem; border-radius: .5rem;
+    transition: border-color .3s, color .3s;
+  }
+  .contact-link:hover { border-color: var(--secondary-container); color: var(--secondary-container); }
+  .contact-link svg { width: 14px; height: 14px; fill: currentColor; }
+  .contact-watermark {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+    font-family: var(--ff-headline); font-weight: 800;
+    font-size: 50rem; color: rgba(255,255,255,.03);
+    line-height: 1; user-select: none; pointer-events: none;
+    white-space: nowrap;
+  }
 
-/* Animations */
-@keyframes fadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+  /* ── FOOTER ── */
+  footer {
+    background: var(--primary);
+    padding: 3rem 2.5rem;
+    border-top: 1px solid rgba(135,160,205,.15);
+  }
+  .footer-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  footer p { font-size: .75rem; color: rgba(251,249,248,.4); }
 
-/* Responsive */
-@media(max-width:768px){
-  .legend-bar{padding:.5rem 1rem;font-size:.75rem}
-  .legend-metrics{gap:1rem}
-  .legend-right{display:none}
-  nav{padding:.8rem 1rem;top:3.8rem}
-  .nav-links{display:none}.nav-toggle{display:block}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(250,249,245,.97);padding:1rem;gap:.8rem;border-bottom:2px solid var(--pri)}
-  .nav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
-  .nav-toggle.active span:nth-child(2){opacity:0}
-  .nav-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
-  .hero{padding:7rem 1rem 2rem}
-  .hero-card{grid-template-columns:1fr}
-  .hero-content{padding:2rem;border-right:none;border-bottom:2px solid var(--pri)}
-  .hero-sidebar{flex-direction:row}
-  .hero-photo-area{border-bottom:none;border-right:2px solid var(--pri)}
-  .hero-photo{width:140px;height:140px}
-  .section{padding:4rem 1rem}
-  .impact-grid{grid-template-columns:1fr}
-  .service-grid{grid-template-columns:1fr}
-  .exp-grid{grid-template-columns:1fr}
-  .cred-grid{grid-template-columns:1fr}
-  .footer-inner{flex-direction:column;gap:1rem;text-align:center}
-}
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-photo-wrap { order: -1; }
+    .hero-photo { width: 140px; height: 140px; }
+    .what-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .impact-bento { grid-template-columns: repeat(2, 1fr); }
+    .approach-grid { grid-template-columns: 1fr; }
+    .cred-bento { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .nav-toggle { display: block; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: rgba(251,249,248,.97);
+      backdrop-filter: blur(20px);
+      padding: 1.5rem 2rem; gap: .75rem;
+      border-bottom: 1px solid var(--outline-variant);
+    }
+    .section { padding: 5rem 1.5rem; }
+    .impact-bento { grid-template-columns: 1fr; }
+    .cred-bento { grid-template-columns: 1fr; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .purpose-band { padding: 5rem 1.5rem; }
+  }
 </style>
 </head>
 <body>
 
-<!-- Legend Bar -->
-<div class="legend-bar">
-  <div class="legend-metrics">
-    <span class="legend-tag">LEGEND:001</span>
-    <div><span class="legend-label">NCR_RED:</span> 60%</div>
-    <div><span class="legend-label">REJECT_RED:</span> 70%</div>
-    <div><span class="legend-label">TOTAL_CAP:</span> SAR 5B+</div>
-  </div>
-  <div class="legend-right">
-    <div style="display:flex;align-items:center;gap:.4rem"><div class="legend-dot"></div> SYS_ACTIVE</div>
-    <div>LOC: KSA_RIYADH</div>
-  </div>
-</div>
-
-<!-- Nav -->
+<!-- ── NAV ── -->
 <nav id="nav">
-  <a href="#" class="nav-brand">The Quality Mindset</a>
-  <ul class="nav-links">
-    <li><a href="#what">What I Do</a></li>
-    <li><a href="#impact">Impact</a></li>
-    <li><a href="#approach">Approach</a></li>
-    <li><a href="#credentials">Credentials</a></li>
-    <li><a href="#contact">Connect</a></li>
-  </ul>
-  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">MF</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#what" class="active">What I Do</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact">Connect</a></li>
+    </ul>
+    <a href="mailto:mohammedfasilkk@gmail.com" class="nav-cta">Get in Touch</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
 </nav>
 
-<!-- Hero -->
-<section class="hero">
+<!-- ── HERO ── -->
+<section class="hero" id="home">
   <div class="hero-inner">
-    <div class="hero-card">
-      <div class="hero-content">
-        <div class="hero-spec">TECH_SPEC_V1.4</div>
-        <h1>Quality Governance<br>for Complex<br>Programs.</h1>
-        <p class="hero-subtitle">I help large-scale construction projects move beyond compliance — by building quality systems that actually work on site.</p>
-        <p class="hero-body">Across infrastructure, aviation, oil & gas, and heritage developments, I've led quality governance on multi-billion-riyal programs, improving performance where it matters most: decision speed, risk control, and delivery confidence.</p>
-        <div class="hero-proof">Reduced NCRs by 60% · Improved rejection rates by 70% · Optimised submittals by 93%</div>
-        <div class="hero-actions">
-          <a href="#impact" class="btn-pri">See Impact</a>
-          <a href="https://www.linkedin.com/in/engineermohammedfasil/" target="_blank" rel="noopener" class="btn-sec">LinkedIn</a>
-        </div>
+    <div>
+      <div class="hero-eyebrow">Mohammed Fasil</div>
+      <h1>Quality<br>Governance<br>for Complex<br>Programs</h1>
+      <p class="hero-subtitle">I help large-scale construction projects move beyond compliance — by building quality systems that actually work on site.</p>
+      <div class="hero-actions">
+        <a href="#impact" class="btn-primary">See Impact</a>
+        <a href="https://www.linkedin.com/in/engineermohammedfasil/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
       </div>
-      <div class="hero-sidebar">
-        <div class="hero-photo-area">
-          <div class="hero-photo"><img src="photo.png" alt="Mohammed Fasil" /></div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-num">14+</div>
-          <div class="hero-stat-label">Years GCC Experience</div>
-        </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo">
+        <img src="photo.png" alt="Mohammed Fasil" />
       </div>
     </div>
   </div>
+  <div class="hero-watermark" aria-hidden="true">MF</div>
 </section>
 
-<!-- Purpose Band -->
-<section class="purpose-band">
-  <p class="purpose-text">Quality is not achieved by inspection alone.<br>It is built through <em>systems</em>, <em>discipline</em>,<br>and clarity in <em>execution.</em></p>
-</section>
+<!-- ── PURPOSE BAND ── -->
+<div class="purpose-band reveal">
+  <p class="purpose-text">
+    Quality is not achieved by inspection alone.<br>
+    It is built through <em>systems</em>, <em>discipline</em>,<br>
+    and clarity in <em>execution.</em>
+  </p>
+</div>
 
-<!-- What I Do -->
+<!-- ── WHAT I DO ── -->
 <section id="what" class="section">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">01_What I Do</h2>
-      <span class="section-tag">MODULE:05</span>
-    </div>
-    <p style="font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--pri);line-height:1.3;margin-bottom:1rem" class="reveal">Quality issues on major projects are rarely caused by lack of procedures. They happen when systems <span style="color:var(--sec)">don't translate into execution.</span></p>
-    <p style="font-family:var(--fb);font-size:1.1rem;color:var(--txt2);text-transform:lowercase;margin-bottom:1rem" class="reveal">My work focuses on closing that gap.</p>
-    <div class="service-grid reveal">
-      <div class="service-card"><div class="service-id">SYS_01</div><div class="service-text">Designing quality systems that reduce NCR recurrence — not just track it</div></div>
-      <div class="service-card"><div class="service-id">SYS_02</div><div class="service-text">Structuring submittal and approval workflows to improve decision speed and clarity</div></div>
-      <div class="service-card"><div class="service-id">SYS_03</div><div class="service-text">Using trend data and root cause analysis to eliminate recurring failures at source</div></div>
-      <div class="service-card"><div class="service-id">SYS_04</div><div class="service-text">Building KPI frameworks that reflect actual project performance — not just reporting metrics</div></div>
-      <div class="service-card"><div class="service-id">SYS_05</div><div class="service-text">Aligning contractors, consultants, and PMC teams under a unified quality system</div></div>
-      <div class="service-card"><div class="service-id">SYS_06</div><div class="service-text">Reviewing material approvals and procurement compliance to catch specification deviations before they reach site</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Impact -->
-<section id="impact" class="section" style="padding-top:0">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">02_Selected Impact</h2>
-      <span class="section-tag">METRICS:04</span>
-    </div>
-    <div class="impact-grid reveal">
-      <div class="impact-card"><div class="impact-num">60%</div><div class="impact-label">NCR Reduction</div><div class="impact-desc">through structured trend analysis and contractor-specific corrective actions within 8 months</div></div>
-      <div class="impact-card"><div class="impact-num">70%</div><div class="impact-label">Quality Rejection Improvement</div><div class="impact-desc">by strengthening inspection and approval workflows through systematic pre-review</div></div>
-      <div class="impact-card"><div class="impact-num">93%</div><div class="impact-label">Submittal Volume Optimisation</div><div class="impact-desc">transforming inefficient documentation into streamlined, decision-ready submissions</div></div>
-      <div class="impact-card"><div class="impact-num">5.55B</div><div class="impact-label">SAR Programme Value</div><div class="impact-desc">quality governance across the Diriyah programme — infrastructure and 31 buildings within a UNESCO World Heritage context</div></div>
-    </div>
-    <div class="programmes-bar reveal">
-      <div class="programmes-label">Programmes Delivered For</div>
-      <div class="programmes-list">Diriyah Company · Qatar Rail · MATAR · Qatar Energy · Ashghal</div>
+  <div class="section-inner">
+    <span class="eyebrow-label reveal">What I Do</span>
+    <div class="what-grid">
+      <div>
+        <h2 class="section-heading reveal">Quality issues on major projects are rarely caused by lack of procedures.</h2>
+        <div class="rule reveal"></div>
+        <p class="section-sub reveal">They happen when systems don't translate into execution. My work focuses on closing that gap.</p>
+      </div>
+      <ul class="service-list">
+        <li class="service-item reveal"><span class="service-dot"></span><span>Establishing ISO 9001-aligned quality management systems that are practical, not theoretical</span></li>
+        <li class="service-item reveal"><span class="service-dot"></span><span>Structuring submittal, inspection, and approval workflows for clarity and control</span></li>
+        <li class="service-item reveal"><span class="service-dot"></span><span>Driving NCR reduction through data-led root cause analysis</span></li>
+        <li class="service-item reveal"><span class="service-dot"></span><span>Building KPI dashboards that reflect real project performance</span></li>
+        <li class="service-item reveal"><span class="service-dot"></span><span>Aligning contractors, consultants, and PMC teams under a unified quality approach</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- Approach -->
-<section id="approach" class="section" style="padding-top:0">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">03_My Approach</h2>
+<!-- ── IMPACT ── -->
+<section id="impact" class="section impact-section">
+  <div class="section-inner">
+    <span class="eyebrow-label reveal">Selected Impact</span>
+    <h2 class="section-heading reveal">Measurable results from structured systems</h2>
+    <div class="impact-bento">
+      <div class="impact-card reveal">
+        <div class="impact-num">60%</div>
+        <div class="impact-label">NCR Reduction</div>
+        <div class="impact-desc">Through structured trend analysis and contractor-specific corrective actions within 8 months</div>
+      </div>
+      <div class="impact-card reveal">
+        <div class="impact-num">70%</div>
+        <div class="impact-label">Quality Rejection Improvement</div>
+        <div class="impact-desc">By strengthening inspection and approval workflows through systematic pre-review</div>
+      </div>
+      <div class="impact-card reveal">
+        <div class="impact-num">93%</div>
+        <div class="impact-label">Submittal Volume Optimisation</div>
+        <div class="impact-desc">Transforming inefficient documentation into streamlined, decision-ready submissions</div>
+      </div>
+      <div class="impact-card reveal">
+        <div class="impact-num">5.55B</div>
+        <div class="impact-label">SAR Programme Value</div>
+        <div class="impact-desc">Quality governance across the Diriyah programme — infrastructure and 31 buildings within a UNESCO World Heritage context</div>
+      </div>
     </div>
-    <p style="font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--pri);line-height:1.3;margin-bottom:1rem" class="reveal">Most projects treat quality as a control function. I approach it as <span style="color:var(--sec)">a system.</span></p>
-    <p style="font-family:var(--fb);font-size:1.1rem;color:var(--txt2);text-transform:lowercase;margin-bottom:.5rem" class="reveal">That means:</p>
-    <div class="approach-list">
-      <div class="approach-item reveal">Looking beyond individual NCRs to identify patterns and systemic gaps</div>
-      <div class="approach-item reveal">Shifting from reactive corrections to preventive control</div>
-      <div class="approach-item reveal">Creating visibility through structured, decision-focused reporting</div>
-      <div class="approach-item reveal">Ensuring quality processes support delivery — not slow it down</div>
-    </div>
-    <div class="approach-quote reveal">Most quality systems don't fail because they are incomplete. They fail because they are not used the way they were designed.</div>
   </div>
 </section>
 
-<!-- Experience -->
-<section class="section" style="padding-top:0">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">04_Experience</h2>
-      <span class="section-tag">YRS:14+</span>
+<!-- ── APPROACH ── -->
+<section id="approach" class="section">
+  <div class="section-inner">
+    <span class="eyebrow-label reveal">My Approach</span>
+    <h2 class="section-heading reveal">Most projects treat quality as a control function. I approach it as a system.</h2>
+    <div class="rule reveal"></div>
+    <div class="approach-grid">
+      <div class="approach-card reveal">
+        <span class="material-symbols-outlined approach-icon">analytics</span>
+        <div class="approach-title">Pattern Recognition</div>
+        <div class="approach-body">Looking beyond individual NCRs to identify systemic patterns across the programme</div>
+      </div>
+      <div class="approach-card reveal">
+        <span class="material-symbols-outlined approach-icon">shield_check</span>
+        <div class="approach-title">Preventive Control</div>
+        <div class="approach-body">Shifting from reactive corrections to proactive, preventive quality control</div>
+      </div>
+      <div class="approach-card reveal">
+        <span class="material-symbols-outlined approach-icon">bar_chart_4_bars</span>
+        <div class="approach-title">Stakeholder Visibility</div>
+        <div class="approach-body">Creating clear visibility for stakeholders through structured, decision-ready reporting</div>
+      </div>
+      <div class="approach-card reveal">
+        <span class="material-symbols-outlined approach-icon">rocket_launch</span>
+        <div class="approach-title">Delivery-First Quality</div>
+        <div class="approach-body">Ensuring quality processes actively support delivery — not slow it down</div>
+      </div>
     </div>
-    <p style="font-family:var(--fb);font-size:1.1rem;color:var(--txt2);text-transform:lowercase;margin-bottom:1rem;line-height:1.7" class="reveal">Currently serving as QA/QC Manager with a PMC on one of Saudi Arabia's flagship heritage developments, acting as the single point of quality governance across infrastructure and vertical assets.</p>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section class="section exp-section">
+  <div class="section-inner">
+    <span class="eyebrow-label reveal">Experience</span>
+    <h2 class="section-heading reveal">14 years across the Gulf's most ambitious programmes</h2>
+    <div class="rule reveal"></div>
+    <p class="section-sub reveal">Currently serving as QA/QC Manager with a PMC on one of Saudi Arabia's flagship heritage developments, acting as the single point of quality governance across infrastructure and vertical assets.</p>
     <div class="exp-tags reveal">
-      <span class="exp-tag">Airports & Airside</span>
-      <span class="exp-tag">Metro & Rail</span>
-      <span class="exp-tag">Oil & Gas</span>
-      <span class="exp-tag">Urban & Cultural</span>
+      <span class="exp-tag">Airports &amp; Airside Infrastructure</span>
+      <span class="exp-tag">Metro &amp; Rail Systems</span>
+      <span class="exp-tag">Oil &amp; Gas Facilities</span>
+      <span class="exp-tag">Urban &amp; Cultural Developments</span>
       <span class="exp-tag">Heritage Construction</span>
     </div>
-    <div class="exp-grid reveal">
-      <div class="exp-card"><div class="exp-period">Current</div><div class="exp-name">Diriyah Development Programme</div><div class="exp-detail">SAR 5.55B · 31 buildings + infrastructure · QA/QC Manager</div></div>
-      <div class="exp-card"><div class="exp-period">Qatar</div><div class="exp-name">Hamad International Airport Expansion</div><div class="exp-detail">QAR 3.1B · Package-0012 · QA/QC Engineer</div></div>
-      <div class="exp-card"><div class="exp-period">Qatar</div><div class="exp-name">Doha Metro Programme</div><div class="exp-detail">QAR 10B · Red & Green Lines · 8 years</div></div>
-      <div class="exp-card"><div class="exp-period">Qatar</div><div class="exp-name">Qatar Energy & Ashghal — Multiple Projects</div><div class="exp-detail">Tank Farm Upgrades · Multistorey Car Park · Lusail Security Complex</div></div>
-    </div>
   </div>
 </section>
 
-<!-- Credentials -->
-<section id="credentials" class="section" style="padding-top:0">
-  <div class="container">
-    <div class="section-header reveal">
-      <h2 class="section-title">05_Credentials</h2>
-      <span class="section-tag">CERT:06</span>
-    </div>
-    <div class="cred-grid reveal">
-      <div class="cred-card"><div class="cred-abbr">CQP MCQI</div><div class="cred-name">Chartered Quality Professional</div><div class="cred-issuer">CQI — The Chartered Quality Institute · 2026</div><a href="https://cqi.digitalmembership.co.uk/CQ26420E/mohammedfasilkottuvayalkuniyil48.php" target="_blank" rel="noopener" class="cred-verify">Verify →</a></div>
-      <div class="cred-card"><div class="cred-abbr">CMQ/OE</div><div class="cred-name">Certified Manager of Quality / Organisational Excellence</div><div class="cred-issuer">American Society for Quality (ASQ)</div><a href="https://credentials.asq.org/826ef1a3-b586-4109-8cd8-1918de541140" target="_blank" rel="noopener" class="cred-verify">Verify →</a></div>
-      <div class="cred-card"><div class="cred-abbr">ISO 9001:2015</div><div class="cred-name">Lead Auditor (IRCA Certified)</div><div class="cred-issuer">International Register of Certificated Auditors</div></div>
-      <div class="cred-card"><div class="cred-abbr">LSSGB</div><div class="cred-name">Lean Six Sigma Green Belt</div><div class="cred-issuer">TÜV SÜD</div></div>
-      <div class="cred-card"><div class="cred-abbr">SCE</div><div class="cred-name">Saudi Council of Engineers — Registered Engineer</div><div class="cred-issuer">Saudi Council of Engineers</div></div>
-      <div class="cred-card"><div class="cred-abbr">M.Tech</div><div class="cred-name">Remote Sensing & GIS (Civil Engineering)</div><div class="cred-issuer">National Institute of Technology Karnataka</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="section" style="padding-top:0">
-  <div class="container">
-    <div class="contact-band reveal">
-      <div class="contact-tag">Protocol: Connect</div>
-      <h2 class="contact-heading">Let's Connect.</h2>
-      <p class="contact-body">If you're managing a complex construction program and need stronger control over quality performance, let's connect.</p>
-      <div class="contact-links">
-        <a href="https://www.linkedin.com/in/engineermohammedfasil/" target="_blank" rel="noopener" class="btn-contact-pri"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
-        <a href="mailto:mohammedfasilkk@gmail.com" class="btn-contact-sec"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> Email</a>
+<!-- ── CREDENTIALS ── -->
+<section id="credentials" class="section">
+  <div class="section-inner">
+    <span class="eyebrow-label reveal">Credentials</span>
+    <h2 class="section-heading reveal">Professional certifications &amp; registration</h2>
+    <p class="section-sub reveal">Industry-recognised certifications that define 14 years of specialised quality leadership.</p>
+    <div class="cred-bento">
+      <div class="cred-card reveal">
+        <span class="material-symbols-outlined cred-icon">workspace_premium</span>
+        <div class="cred-abbr">CQP MCQI</div>
+        <div class="cred-name">Chartered Quality Professional</div>
+        <div class="cred-issuer">CQI — The Chartered Quality Institute · 2026</div>
+        <a href="https://cqi.digitalmembership.co.uk/CQ26420E/mohammedfasilkottuvayalkuniyil48.php" target="_blank" rel="noopener" class="cred-verify">Verify →</a>
+      </div>
+      <div class="cred-card reveal">
+        <span class="material-symbols-outlined cred-icon">fact_check</span>
+        <div class="cred-abbr">CMQ/OE</div>
+        <div class="cred-name">Certified Manager of Quality / Organisational Excellence</div>
+        <div class="cred-issuer">American Society for Quality (ASQ)</div>
+        <a href="https://credentials.asq.org/826ef1a3-b586-4109-8cd8-1918de541140" target="_blank" rel="noopener" class="cred-verify">Verify →</a>
+      </div>
+      <div class="cred-card reveal">
+        <span class="material-symbols-outlined cred-icon">verified</span>
+        <div class="cred-abbr">ISO 9001:2015</div>
+        <div class="cred-name">Lead Auditor (IRCA Certified)</div>
+        <div class="cred-issuer">International Register of Certificated Auditors</div>
+      </div>
+      <div class="cred-card reveal">
+        <span class="material-symbols-outlined cred-icon">engineering</span>
+        <div class="cred-abbr">LSSGB</div>
+        <div class="cred-name">Lean Six Sigma Green Belt</div>
+        <div class="cred-issuer">TÜV SÜD</div>
+      </div>
+      <div class="cred-card reveal">
+        <span class="material-symbols-outlined cred-icon">badge</span>
+        <div class="cred-abbr">SCE</div>
+        <div class="cred-name">Saudi Council of Engineers — Registered Engineer</div>
+        <div class="cred-issuer">Saudi Council of Engineers</div>
+      </div>
+      <div class="cred-card reveal">
+        <span class="material-symbols-outlined cred-icon">school</span>
+        <div class="cred-abbr">M.Tech</div>
+        <div class="cred-name">Remote Sensing &amp; GIS (Civil Engineering)</div>
+        <div class="cred-issuer">National Institute of Technology Karnataka</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
+<!-- ── CONTACT ── -->
+<section id="contact" class="contact-section">
+  <div style="position:relative;z-index:1;">
+    <span class="eyebrow-label reveal" style="color:rgba(135,160,205,.7);">Let's Connect</span>
+    <h2 class="reveal">Let's Build Stronger Quality Performance Together.</h2>
+    <div class="contact-links reveal">
+      <a href="https://www.linkedin.com/in/engineermohammedfasil/" target="_blank" rel="noopener" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:mohammedfasilkk@gmail.com" class="contact-link">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        Email
+      </a>
+    </div>
+  </div>
+  <div class="contact-watermark" aria-hidden="true">MF</div>
+</section>
+
+<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-name">Mohammed Fasil</div>
-    <div class="footer-copy">© 2026 The Quality Mindset. All Rights Reserved.</div>
+    <p>© 2026 Mohammed Fasil — The Quality Mindset</p>
+    <p style="font-size:.75rem;color:rgba(135,160,205,.4);">engineermohammedfasil.github.io</p>
   </div>
 </footer>
 
 <script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>80));
-const reveals=document.querySelectorAll('.reveal');
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
-reveals.forEach(el=>observer.observe(el));
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});document.querySelector('.nav-links').classList.remove('open');document.querySelector('.nav-toggle').classList.remove('active')})});
-document.querySelector('.nav-toggle').addEventListener('click',()=>{document.querySelector('.nav-links').classList.toggle('open');document.querySelector('.nav-toggle').classList.toggle('active')});
-</script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks  = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    navToggle.querySelector('span').textContent =
+      navLinks.classList.contains('open') ? 'close' : 'menu';
+  });
 
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      navLinks.classList.remove('open');
+      navToggle.querySelector('span').textContent = 'menu';
+    });
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: .1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
