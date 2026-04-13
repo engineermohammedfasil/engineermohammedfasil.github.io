@@ -154,11 +154,14 @@
   .hero-photo-wrap {
     opacity: 0; animation: fadeUp .6s ease forwards .3s;
   }
-.hero-photo {
+  .hero-photo {
     width: 320px; height: 400px; border-radius: .75rem;
     overflow: hidden;
   }
-  .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(100%); transition: filter .7s; }
+  .hero-photo img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    filter: grayscale(100%); transition: filter .7s;
+  }
   .hero-photo:hover img { filter: grayscale(0%); }
   .hero-watermark {
     position: absolute; right: -2rem; bottom: -4rem;
@@ -387,11 +390,12 @@
   @media (max-width: 900px) {
     .hero-inner { grid-template-columns: 1fr; }
     .hero-photo-wrap { order: -1; }
-    .hero-photo { width: 140px; height: 140px; }
+    .hero-photo { width: 200px; height: 260px; margin: 0 auto; }
     .what-grid { grid-template-columns: 1fr; gap: 2rem; }
     .impact-bento { grid-template-columns: repeat(2, 1fr); }
     .approach-grid { grid-template-columns: 1fr; }
     .cred-bento { grid-template-columns: repeat(2, 1fr); }
+    .insights-grid { grid-template-columns: 1fr !important; }
   }
   @media (max-width: 640px) {
     .nav-links { display: none; }
@@ -424,6 +428,7 @@
       <li><a href="#impact">Impact</a></li>
       <li><a href="#approach">Approach</a></li>
       <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#insights">Insights</a></li>
       <li><a href="#contact">Connect</a></li>
     </ul>
     <a href="mailto:mohammedfasilkk@gmail.com" class="nav-cta">Get in Touch</a>
@@ -607,6 +612,114 @@
         <div class="cred-name">Remote Sensing &amp; GIS (Civil Engineering)</div>
         <div class="cred-issuer">National Institute of Technology Karnataka</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INSIGHTS ── -->
+<section id="insights" class="section impact-section">
+  <div class="section-inner">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:3rem;">
+      <div>
+        <span class="eyebrow-label reveal" style="color:var(--on-primary-container);">The Quality Mindset</span>
+        <h2 class="section-heading reveal" style="color:var(--on-primary);margin-bottom:0;">Selected Writing</h2>
+      </div>
+      <a href="https://www.linkedin.com/in/engineermohammedfasil/" target="_blank" rel="noopener"
+         class="reveal"
+         style="display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ff-headline);font-weight:700;font-size:.875rem;color:var(--secondary-container);transition:opacity .3s;"
+         onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">
+        Follow on LinkedIn
+        <span class="material-symbols-outlined" style="font-size:1.1rem;">arrow_forward</span>
+      </a>
+    </div>
+
+    <div class="insights-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
+
+      <!-- Card 1 -->
+      <div class="reveal" style="cursor:pointer;" onclick="window.open('https://www.linkedin.com/posts/engineermohammedfasil_the-roi-of-quality-culture-mohammed-fasil-activity-7449326160926216193-178J','_blank')">
+        <div style="aspect-ratio:16/9;border-radius:.75rem;overflow:hidden;margin-bottom:1.5rem;position:relative;background:linear-gradient(135deg,#0d2137 0%,#1b365d 50%,#0a1a2e 100%);">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.18;" viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
+            <circle cx="320" cy="40" r="120" fill="none" stroke="#fed255" stroke-width="1"/>
+            <circle cx="320" cy="40" r="80" fill="none" stroke="#fed255" stroke-width=".5"/>
+            <circle cx="320" cy="40" r="40" fill="none" stroke="#fed255" stroke-width=".5"/>
+            <line x1="0" y1="180" x2="400" y2="60" stroke="#87a0cd" stroke-width=".5"/>
+            <line x1="0" y1="225" x2="400" y2="100" stroke="#87a0cd" stroke-width=".5"/>
+            <line x1="0" y1="140" x2="300" y2="0" stroke="#87a0cd" stroke-width=".5"/>
+          </svg>
+          <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:1.25rem;">
+            <span style="font-family:var(--ff-headline);font-weight:800;font-size:2.5rem;color:rgba(254,210,85,.12);line-height:1;letter-spacing:-.04em;user-select:none;">ROI</span>
+          </div>
+          <span style="position:absolute;top:1rem;left:1rem;background:var(--secondary-container);color:var(--on-secondary-container);font-family:var(--ff-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .75rem;border-radius:999px;">Carousel</span>
+        </div>
+        <span style="font-family:var(--ff-body);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--on-primary-container);display:block;margin-bottom:.75rem;">Apr 13, 2026</span>
+        <h3 style="font-family:var(--ff-headline);font-weight:700;font-size:1.2rem;color:var(--on-primary);line-height:1.3;margin-bottom:.75rem;transition:color .3s;"
+            onmouseover="this.style.color='var(--secondary-container)'" onmouseout="this.style.color='var(--on-primary)'">
+          The ROI of Quality Culture
+        </h3>
+        <p style="font-size:.875rem;color:var(--on-primary-container);line-height:1.75;margin-bottom:1.25rem;">
+          You don't lose quality in one big decision. You lose it in small ones.
+        </p>
+        <div style="height:1px;background:rgba(135,160,205,.2);transition:background .3s;"
+             onmouseover="this.style.background='var(--secondary-container)'" onmouseout="this.style.background='rgba(135,160,205,.2)'"></div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="reveal" style="cursor:pointer;" onclick="window.open('https://www.linkedin.com/posts/engineermohammedfasil_qualitymanagement-qaqc-construction-activity-7447190868899401728-s7xe','_blank')">
+        <div style="aspect-ratio:16/9;border-radius:.75rem;overflow:hidden;margin-bottom:1.5rem;position:relative;background:linear-gradient(135deg,#0a1a2e 0%,#0d2a45 50%,#1b365d 100%);">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.18;" viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
+            <rect x="60" y="40" width="280" height="145" fill="none" stroke="#87a0cd" stroke-width=".75"/>
+            <rect x="80" y="60" width="240" height="105" fill="none" stroke="#87a0cd" stroke-width=".5"/>
+            <line x1="60" y1="112" x2="340" y2="112" stroke="#fed255" stroke-width=".75"/>
+            <line x1="140" y1="40" x2="140" y2="185" stroke="#87a0cd" stroke-width=".5"/>
+            <line x1="220" y1="40" x2="220" y2="185" stroke="#87a0cd" stroke-width=".5"/>
+            <line x1="300" y1="40" x2="300" y2="185" stroke="#87a0cd" stroke-width=".5"/>
+          </svg>
+          <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:1.25rem;">
+            <span style="font-family:var(--ff-headline);font-weight:800;font-size:2.5rem;color:rgba(254,210,85,.12);line-height:1;letter-spacing:-.04em;user-select:none;">NCR</span>
+          </div>
+          <span style="position:absolute;top:1rem;left:1rem;background:var(--secondary-container);color:var(--on-secondary-container);font-family:var(--ff-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .75rem;border-radius:999px;">Post</span>
+        </div>
+        <span style="font-family:var(--ff-body);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--on-primary-container);display:block;margin-bottom:.75rem;">Apr 7, 2026</span>
+        <h3 style="font-family:var(--ff-headline);font-weight:700;font-size:1.2rem;color:var(--on-primary);line-height:1.3;margin-bottom:.75rem;transition:color .3s;"
+            onmouseover="this.style.color='var(--secondary-container)'" onmouseout="this.style.color='var(--on-primary)'">
+          Closing NCRs Is Not the Win You Think It Is
+        </h3>
+        <p style="font-size:.875rem;color:var(--on-primary-container);line-height:1.75;margin-bottom:1.25rem;">
+          "I already closed 12 NCRs this week." He said it like it was a win.
+        </p>
+        <div style="height:1px;background:rgba(135,160,205,.2);transition:background .3s;"
+             onmouseover="this.style.background='var(--secondary-container)'" onmouseout="this.style.background='rgba(135,160,205,.2)'"></div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="reveal" style="cursor:pointer;" onclick="window.open('https://www.linkedin.com/posts/engineermohammedfasil_quality-manager-mindset-mohammed-fasil-activity-7445327165887430656-nqUl','_blank')">
+        <div style="aspect-ratio:16/9;border-radius:.75rem;overflow:hidden;margin-bottom:1.5rem;position:relative;background:linear-gradient(135deg,#1b365d 0%,#0a1a2e 50%,#0d2137 100%);">
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.18;" viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
+            <path d="M 40 180 L 120 80 L 200 130 L 280 50 L 360 90" fill="none" stroke="#fed255" stroke-width="1.5"/>
+            <path d="M 40 200 L 120 100 L 200 150 L 280 70 L 360 110" fill="none" stroke="#87a0cd" stroke-width=".5"/>
+            <circle cx="120" cy="80" r="4" fill="#fed255" opacity=".6"/>
+            <circle cx="200" cy="130" r="4" fill="#fed255" opacity=".6"/>
+            <circle cx="280" cy="50" r="4" fill="#fed255" opacity=".6"/>
+            <line x1="40" y1="30" x2="40" y2="200" stroke="#87a0cd" stroke-width=".5"/>
+            <line x1="40" y1="200" x2="370" y2="200" stroke="#87a0cd" stroke-width=".5"/>
+          </svg>
+          <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:1.25rem;">
+            <span style="font-family:var(--ff-headline);font-weight:800;font-size:2rem;color:rgba(254,210,85,.12);line-height:1;letter-spacing:-.04em;user-select:none;">MINDSET</span>
+          </div>
+          <span style="position:absolute;top:1rem;left:1rem;background:var(--secondary-container);color:var(--on-secondary-container);font-family:var(--ff-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .75rem;border-radius:999px;">Carousel</span>
+        </div>
+        <span style="font-family:var(--ff-body);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--on-primary-container);display:block;margin-bottom:.75rem;">Apr 7, 2026</span>
+        <h3 style="font-family:var(--ff-headline);font-weight:700;font-size:1.2rem;color:var(--on-primary);line-height:1.3;margin-bottom:.75rem;transition:color .3s;"
+            onmouseover="this.style.color='var(--secondary-container)'" onmouseout="this.style.color='var(--on-primary)'">
+          The Quality Manager Mindset Shift
+        </h3>
+        <p style="font-size:.875rem;color:var(--on-primary-container);line-height:1.75;margin-bottom:1.25rem;">
+          If you're trying to grow from QA/QC Engineer to Quality Manager — this is the shift nobody explains.
+        </p>
+        <div style="height:1px;background:rgba(135,160,205,.2);transition:background .3s;"
+             onmouseover="this.style.background='var(--secondary-container)'" onmouseout="this.style.background='rgba(135,160,205,.2)'"></div>
+      </div>
+
     </div>
   </div>
 </section>
