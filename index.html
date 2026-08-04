@@ -433,7 +433,7 @@
   <div class="nav-inner">
     <a href="#" class="nav-brand">MF</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#what" class="active">What I Do</a></li>
+      <li><a href="#what">What I Do</a></li>
       <li><a href="#impact">Impact</a></li>
       <li><a href="#approach">Approach</a></li>
       <li><a href="#credentials">Credentials</a></li>
@@ -461,7 +461,7 @@
     </div>
     <div class="hero-photo-wrap">
       <div class="hero-photo">
-        <img src="photo.png" alt="Mohammed Fasil" />
+        <img src="photo.jpeg" alt="Mohammed Fasil" />
       </div>
     </div>
   </div>
@@ -784,6 +784,26 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: .1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── NAV SCROLL-SPY ──
+  const navAnchorLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+  const navSections = navAnchorLinks
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+
+  function setActiveNavLink(id) {
+    navAnchorLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+    });
+  }
+
+  const navSpyObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActiveNavLink(entry.target.id);
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+  navSections.forEach(section => navSpyObserver.observe(section));
 </script>
 </body>
 </html>
