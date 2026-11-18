@@ -7,11 +7,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <style>
+    /* PAGE COLOURS: change these four values to restyle the whole page (no rebuild needed).
+       Keep the order: footer darkest, then page, then panel, then raise (lightest). */
+    :root {
+      --bg-page:   #2a1e2a;  /* main page background */
+      --bg-panel:  #302330;  /* side panels, alternate sections, hover on page-colour cards */
+      --bg-raise:  #332633;  /* hero tiles, sector pills, hover on panels */
+      --bg-footer: #211721;  /* footer */
+    }
+    .bg-page-glass {
+      background-color: var(--bg-page);
+      background-color: color-mix(in srgb, var(--bg-page) 80%, transparent);
+    }
     @layer base {
       html, body {
         margin: 0;
         padding: 0;
-        background-color: #1a1a1a;
+        background-color: var(--bg-page);
         color: #f0f0f0;
       }
       body { overscroll-behavior: none; }
@@ -56,9 +68,9 @@
       color: #fb5526 !important;
     }
 </style></head>
-<body class="bg-[#1a1a1a] font-zha text-[#efefef] antialiased selection:bg-white selection:text-black">
+<body class="bg-page font-zha text-[#efefef] antialiased selection:bg-white selection:text-black">
 <!-- TOP HEADER (Translucent ZHA minimalist nav) -->
-<header class="fixed top-0 left-0 right-0 w-full z-50 bg-[#1a1a1a]/80 backdrop-blur-md border-b border-white/10">
+<header class="fixed top-0 left-0 right-0 w-full z-50 bg-page-glass backdrop-blur-md border-b border-white/10">
 <div class="h-20 w-full px-6 md:px-12 lg:px-16 flex items-center justify-between">
 <a class="flex items-baseline gap-3 group text-left" href="#hero">
 <span class="text-white text-[15px] font-semibold tracking-tight transition-opacity group-hover:opacity-70">Mohammed Fasil</span>
@@ -82,13 +94,13 @@
 </div>
 </div>
 </header>
-<main class="w-full pt-20 bg-[#1a1a1a] min-h-screen">
+<main class="w-full pt-20 bg-page min-h-screen">
 <div class="flex flex-col w-full">
 <!-- SECTION 1: HERO (ZHA Monumental Editorial Grid) -->
 <section class="w-full border-b border-white/10" id="hero">
 <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[640px] w-full">
 <!-- Left Column (approx 65% width) -->
-<div class="lg:col-span-8 p-6 md:p-12 lg:p-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10 bg-[#1a1a1a]">
+<div class="lg:col-span-8 p-6 md:p-12 lg:p-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10 bg-page">
 <div class="flex items-center gap-3 mb-12">
 <span class="inline-block px-3 py-1 rounded-full bg-white text-black text-[11px] font-medium tracking-wide">
                 Quality governance
@@ -112,7 +124,7 @@
 </div>
 </div>
 <!-- Right Column (35% width) -->
-<div class="lg:col-span-4 p-6 md:p-12 lg:p-12 flex flex-col justify-between bg-[#202020]">
+<div class="lg:col-span-4 p-6 md:p-12 lg:p-12 flex flex-col justify-between bg-panel">
 <div class="space-y-6">
 <div class="flex items-center justify-between pb-4 border-b border-white/10">
 <span class="text-xs text-[#8e9192]">Role specification</span>
@@ -127,11 +139,11 @@
 </div>
 <div class="pt-12 space-y-6">
 <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-lg overflow-hidden">
-<div class="bg-[#262626] p-4">
+<div class="bg-raise p-4">
 <span class="text-[11px] text-[#8e9192] block mb-1">Geography</span>
 <span class="text-sm md:text-base text-white font-medium">Makkah / GCC</span>
 </div>
-<div class="bg-[#262626] p-4">
+<div class="bg-raise p-4">
 <span class="text-[11px] text-[#8e9192] block mb-1">Flagship scale</span>
 <span class="text-sm md:text-base text-white font-medium">SAR 5.55B value</span>
 </div>
@@ -150,9 +162,9 @@
 </div>
 </section>
 <!-- SECTION 2: PURPOSE STATEMENT / CORE PHILOSOPHY -->
-<section class="w-full border-b border-white/10 bg-[#1a1a1a]">
+<section class="w-full border-b border-white/10 bg-page">
 <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
-<div class="lg:col-span-3 p-6 md:p-10 flex flex-col justify-between bg-[#202020]">
+<div class="lg:col-span-3 p-6 md:p-10 flex flex-col justify-between bg-panel">
 <div class="flex items-center gap-2">
 <span class="text-xs text-[#8e9192]">Core philosophy</span>
 </div>
@@ -160,7 +172,7 @@
               The Quality Mindset
             </div>
 </div>
-<div class="lg:col-span-9 p-8 md:p-14 lg:p-16 flex items-center bg-[#1a1a1a]">
+<div class="lg:col-span-9 p-8 md:p-14 lg:p-16 flex items-center bg-page">
 <blockquote class="text-2xl md:text-3xl lg:text-4xl text-white font-light tracking-[-0.02em] leading-snug max-w-4xl">
               "Quality is not achieved by inspection alone. It is built through systems, discipline, and clarity in execution."
             </blockquote>
@@ -168,7 +180,7 @@
 </div>
 </section>
 <!-- SECTION 3: IMPACT & PROVEN METRICS (4 QUANTITATIVE STATS) -->
-<section class="w-full border-b border-white/10 bg-[#1a1a1a]" id="impact">
+<section class="w-full border-b border-white/10 bg-page" id="impact">
 <div class="px-6 md:px-12 lg:px-16 py-6 border-b border-white/10 flex items-center justify-between">
 <div class="flex items-center gap-3">
 <span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">01</span>
@@ -182,7 +194,7 @@
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
 <!-- Stat 01 -->
-<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-200">
 <div>
 <div class="flex items-center justify-between mb-8">
 <span class="text-xs text-[#8e9192]">Metric 01</span>
@@ -200,7 +212,7 @@
             </p>
 </div>
 <!-- Stat 02 -->
-<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-200">
 <div>
 <div class="flex items-center justify-between mb-8">
 <span class="text-xs text-[#8e9192]">Metric 02</span>
@@ -218,7 +230,7 @@
             </p>
 </div>
 <!-- Stat 03 -->
-<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-200">
 <div>
 <div class="flex items-center justify-between mb-8">
 <span class="text-xs text-[#8e9192]">Metric 03</span>
@@ -236,7 +248,7 @@
             </p>
 </div>
 <!-- Stat 04 -->
-<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-200">
 <div>
 <div class="flex items-center justify-between mb-8">
 <span class="text-xs text-[#8e9192]">Metric 04</span>
@@ -256,10 +268,10 @@
 </div>
 </section>
 <!-- SECTION 4: WHAT I DO / CORE CAPABILITIES -->
-<section class="w-full border-b border-white/10 bg-[#1a1a1a]" id="what">
+<section class="w-full border-b border-white/10 bg-page" id="what">
 <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
 <!-- Left Column -->
-<div class="lg:col-span-5 p-8 md:p-12 lg:p-16 flex flex-col justify-between bg-[#1a1a1a]">
+<div class="lg:col-span-5 p-8 md:p-12 lg:p-16 flex flex-col justify-between bg-page">
 <div class="space-y-6 max-w-lg">
 <div class="flex items-center gap-3">
 <span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">02</span>
@@ -278,8 +290,8 @@
 </div>
 </div>
 <!-- Right Column: Deliverables list -->
-<div class="lg:col-span-7 divide-y divide-white/10 bg-[#202020]">
-<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-[#262626] transition-colors duration-150">
+<div class="lg:col-span-7 divide-y divide-white/10 bg-panel">
+<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-raise transition-colors duration-150">
 <span class="text-xs text-[#8e9192] pt-1">01</span>
 <div class="space-y-2">
 <h3 class="text-base text-white font-medium tracking-normal">
@@ -290,7 +302,7 @@
                 </p>
 </div>
 </div>
-<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-[#262626] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-raise transition-colors duration-150">
 <span class="text-xs text-[#8e9192] pt-1">02</span>
 <div class="space-y-2">
 <h3 class="text-base text-white font-medium tracking-normal">
@@ -301,7 +313,7 @@
                 </p>
 </div>
 </div>
-<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-[#262626] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-raise transition-colors duration-150">
 <span class="text-xs text-[#8e9192] pt-1">03</span>
 <div class="space-y-2">
 <h3 class="text-base text-white font-medium tracking-normal">
@@ -312,7 +324,7 @@
                 </p>
 </div>
 </div>
-<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-[#262626] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-raise transition-colors duration-150">
 <span class="text-xs text-[#8e9192] pt-1">04</span>
 <div class="space-y-2">
 <h3 class="text-base text-white font-medium tracking-normal">
@@ -323,7 +335,7 @@
                 </p>
 </div>
 </div>
-<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-[#262626] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-raise transition-colors duration-150">
 <span class="text-xs text-[#8e9192] pt-1">05</span>
 <div class="space-y-2">
 <h3 class="text-base text-white font-medium tracking-normal">
@@ -338,7 +350,7 @@
 </div>
 </section>
 <!-- SECTION 5: METHODOLOGY & APPROACH -->
-<section class="w-full border-b border-white/10 bg-[#1a1a1a]" id="approach">
+<section class="w-full border-b border-white/10 bg-page" id="approach">
 <div class="px-6 md:px-12 lg:px-16 py-6 border-b border-white/10 flex items-center justify-between">
 <div class="flex items-center gap-3">
 <span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">03</span>
@@ -349,7 +361,7 @@
 <span class="text-xs text-[#8e9192] hidden sm:inline">From reactive control to systemic reliability</span>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
-<div class="p-8 lg:p-10 flex flex-col justify-between group hover:bg-[#202020] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex flex-col justify-between group hover:bg-panel transition-colors duration-150">
 <div>
 <div class="flex items-center justify-between mb-8">
 <span class="text-xs text-[#8e9192]">01 · Diagnostic</span>
@@ -366,7 +378,7 @@
               Systemic root cause
             </div>
 </div>
-<div class="p-8 lg:p-10 flex flex-col justify-between group hover:bg-[#202020] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex flex-col justify-between group hover:bg-panel transition-colors duration-150">
 <div>
 <div class="flex items-center justify-between mb-8">
 <span class="text-xs text-[#8e9192]">02 · Prevention</span>
@@ -383,7 +395,7 @@
               Proactive assurance
             </div>
 </div>
-<div class="p-8 lg:p-10 flex flex-col justify-between group hover:bg-[#202020] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex flex-col justify-between group hover:bg-panel transition-colors duration-150">
 <div>
 <div class="flex items-center justify-between mb-8">
 <span class="text-xs text-[#8e9192]">03 · Transparency</span>
@@ -400,7 +412,7 @@
               Decision-ready data
             </div>
 </div>
-<div class="p-8 lg:p-10 flex flex-col justify-between group hover:bg-[#202020] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex flex-col justify-between group hover:bg-panel transition-colors duration-150">
 <div>
 <div class="flex items-center justify-between mb-8">
 <span class="text-xs text-[#8e9192]">04 · Execution</span>
@@ -420,7 +432,7 @@
 </div>
 </section>
 <!-- SECTION 6: TYPOLOGIES & ARCHITECTURAL VISUALS (ZHA EDITORIAL GALLERIES) -->
-<section class="w-full border-b border-white/10 bg-[#1a1a1a]" id="typologies">
+<section class="w-full border-b border-white/10 bg-page" id="typologies">
 <div class="px-6 md:px-12 lg:px-16 py-6 border-b border-white/10 flex items-center justify-between">
 <div class="flex items-center gap-3">
 <span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">04</span>
@@ -432,7 +444,7 @@
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
 <!-- Card 1 -->
-<article class="group flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<article class="group flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-200">
 <div>
 <div class="relative w-full aspect-[16/10] overflow-hidden bg-neutral-900 border-b border-white/10">
 <img alt="Diriyah heritage masterplan" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy" src="images/diriyah-masterplan.jpg">
@@ -460,7 +472,7 @@
 </div>
 </article>
 <!-- Card 2 -->
-<article class="group flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<article class="group flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-200">
 <div>
 <div class="relative w-full aspect-[16/10] overflow-hidden bg-neutral-900 border-b border-white/10">
 <img alt="Airports and metro systems" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy" src="images/airport-metro.jpg">
@@ -488,7 +500,7 @@
 </div>
 </article>
 <!-- Card 3 -->
-<article class="group flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<article class="group flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-200">
 <div>
 <div class="relative w-full aspect-[16/10] overflow-hidden bg-neutral-900 border-b border-white/10">
 <img alt="Industrial and urban developments" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" loading="lazy" src="images/industrial-urban.jpg">
@@ -518,7 +530,7 @@
 </div>
 </section>
 <!-- SECTION 7: CREDENTIALS & ACCREDITATIONS (ZHA CLEAN BENTO GRID) -->
-<section class="w-full border-b border-white/10 bg-[#1a1a1a]" id="credentials">
+<section class="w-full border-b border-white/10 bg-page" id="credentials">
 <div class="px-6 md:px-12 lg:px-16 py-6 border-b border-white/10 flex items-center justify-between">
 <div class="flex items-center gap-3">
 <span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">05</span>
@@ -531,7 +543,7 @@
 <!-- 6-Credential Bento Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
 <!-- Credential 1 -->
-<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-150">
 <div>
 <div class="flex items-center justify-between mb-6">
 <span class="text-2xl text-white font-light tracking-tight">CQP MCQI</span>
@@ -552,7 +564,7 @@
 </div>
 </div>
 <!-- Credential 2 -->
-<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-150">
 <div>
 <div class="flex items-center justify-between mb-6">
 <span class="text-2xl text-white font-light tracking-tight">CMQ/OE</span>
@@ -573,7 +585,7 @@
 </div>
 </div>
 <!-- Credential 3 -->
-<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-150">
 <div>
 <div class="flex items-center justify-between mb-6">
 <span class="text-2xl text-white font-light tracking-tight">ISO 9001:2015</span>
@@ -594,7 +606,7 @@
 <!-- Credential Row 2 -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
 <!-- Credential 4 -->
-<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-150">
 <div>
 <div class="flex items-center justify-between mb-6">
 <span class="text-2xl text-white font-light tracking-tight">LSSGB</span>
@@ -612,7 +624,7 @@
 </div>
 </div>
 <!-- Credential 5 -->
-<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-150">
 <div>
 <div class="flex items-center justify-between mb-6">
 <span class="text-2xl text-white font-light tracking-tight">SCE</span>
@@ -630,7 +642,7 @@
 </div>
 </div>
 <!-- Credential 6 -->
-<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-150">
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-page hover:bg-panel transition-colors duration-150">
 <div>
 <div class="flex items-center justify-between mb-6">
 <span class="text-2xl text-white font-light tracking-tight">M.Tech</span>
@@ -649,19 +661,19 @@
 </div>
 </div>
 <!-- Sectors Ribbon -->
-<div class="p-6 md:px-12 lg:px-16 bg-[#202020] border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="p-6 md:px-12 lg:px-16 bg-panel border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
 <span class="text-xs text-[#8e9192] shrink-0">Sectors governed:</span>
 <div class="flex flex-wrap items-center gap-2">
-<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-[#262626]">Airports &amp; airside</span>
-<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-[#262626]">Metro &amp; rail systems</span>
-<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-[#262626]">Oil &amp; gas facilities</span>
-<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-[#262626]">Urban &amp; cultural developments</span>
-<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-[#262626]">Heritage construction</span>
+<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-raise">Airports &amp; airside</span>
+<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-raise">Metro &amp; rail systems</span>
+<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-raise">Oil &amp; gas facilities</span>
+<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-raise">Urban &amp; cultural developments</span>
+<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-raise">Heritage construction</span>
 </div>
 </div>
 </section>
 <!-- SECTION 8: SELECTED WRITING & INSIGHTS (ZHA EDITORIAL DISPATCH TABLE) -->
-<section class="w-full border-b border-white/10 bg-[#1a1a1a]" id="insights">
+<section class="w-full border-b border-white/10 bg-page" id="insights">
 <div class="px-6 md:px-12 lg:px-16 py-6 border-b border-white/10 flex items-center justify-between">
 <div class="flex items-center gap-3">
 <span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">06</span>
@@ -675,7 +687,7 @@
 </a>
 </div>
 <!-- Table Header (Desktop Only) -->
-<div class="hidden md:grid grid-cols-12 px-6 md:px-12 lg:px-16 py-3 bg-[#202020] border-b border-white/10 text-xs text-[#8e9192]">
+<div class="hidden md:grid grid-cols-12 px-6 md:px-12 lg:px-16 py-3 bg-panel border-b border-white/10 text-xs text-[#8e9192]">
 <div class="col-span-1">Index</div>
 <div class="col-span-2">Date &amp; format</div>
 <div class="col-span-6">Essay title &amp; synthesis</div>
@@ -685,7 +697,7 @@
 <!-- Table Rows -->
 <div class="divide-y divide-white/10">
 <!-- Row 1 -->
-<a class="group grid grid-cols-1 md:grid-cols-12 items-baseline md:items-center px-6 md:px-12 lg:px-16 py-6 hover:bg-[#202020] transition-colors duration-150 gap-y-2" href="https://www.linkedin.com/posts/engineermohammedfasil_the-roi-of-quality-culture-mohammed-fasil-activity-7449326160926216193-178J" rel="noopener" target="_blank">
+<a class="group grid grid-cols-1 md:grid-cols-12 items-baseline md:items-center px-6 md:px-12 lg:px-16 py-6 hover:bg-panel transition-colors duration-150 gap-y-2" href="https://www.linkedin.com/posts/engineermohammedfasil_the-roi-of-quality-culture-mohammed-fasil-activity-7449326160926216193-178J" rel="noopener" target="_blank">
 <div class="md:col-span-1 text-xs text-[#8e9192]">
               #01
             </div>
@@ -710,7 +722,7 @@
 </div>
 </a>
 <!-- Row 2 -->
-<a class="group grid grid-cols-1 md:grid-cols-12 items-baseline md:items-center px-6 md:px-12 lg:px-16 py-6 hover:bg-[#202020] transition-colors duration-150 gap-y-2" href="https://www.linkedin.com/posts/engineermohammedfasil_qualitymanagement-qaqc-construction-activity-7447190868899401728-s7xe" rel="noopener" target="_blank">
+<a class="group grid grid-cols-1 md:grid-cols-12 items-baseline md:items-center px-6 md:px-12 lg:px-16 py-6 hover:bg-panel transition-colors duration-150 gap-y-2" href="https://www.linkedin.com/posts/engineermohammedfasil_qualitymanagement-qaqc-construction-activity-7447190868899401728-s7xe" rel="noopener" target="_blank">
 <div class="md:col-span-1 text-xs text-[#8e9192]">
               #02
             </div>
@@ -735,7 +747,7 @@
 </div>
 </a>
 <!-- Row 3 -->
-<a class="group grid grid-cols-1 md:grid-cols-12 items-baseline md:items-center px-6 md:px-12 lg:px-16 py-6 hover:bg-[#202020] transition-colors duration-150 gap-y-2" href="https://www.linkedin.com/posts/engineermohammedfasil_quality-manager-mindset-mohammed-fasil-activity-7445327165887430656-nqUl" rel="noopener" target="_blank">
+<a class="group grid grid-cols-1 md:grid-cols-12 items-baseline md:items-center px-6 md:px-12 lg:px-16 py-6 hover:bg-panel transition-colors duration-150 gap-y-2" href="https://www.linkedin.com/posts/engineermohammedfasil_quality-manager-mindset-mohammed-fasil-activity-7445327165887430656-nqUl" rel="noopener" target="_blank">
 <div class="md:col-span-1 text-xs text-[#8e9192]">
               #03
             </div>
@@ -762,7 +774,7 @@
 </div>
 </section>
 <!-- SECTION 9: CONTACT & ENGAGEMENT PROTOCOL -->
-<section class="w-full bg-[#1a1a1a]" id="contact">
+<section class="w-full bg-page" id="contact">
 <div class="px-6 md:px-12 lg:px-16 py-20 flex flex-col lg:flex-row lg:items-center justify-between gap-12">
 <div class="space-y-4 max-w-2xl">
 <span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">07 · Engagement protocol</span>
@@ -791,7 +803,7 @@
 </div>
 </main>
 <!-- FOOTER -->
-<footer class="w-full bg-[#141414] border-t border-white/10 mt-auto">
+<footer class="w-full bg-footer border-t border-white/10 mt-auto">
 <div class="w-full px-6 md:px-12 lg:px-16 py-16 grid grid-cols-1 md:grid-cols-2 gap-12">
 <div class="flex flex-col justify-between space-y-6 md:border-r md:border-white/10 md:pr-12">
 <div class="space-y-2">
