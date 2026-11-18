@@ -1,809 +1,828 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohammed Fasil | The Quality Mindset</title>
-<meta name="description" content="Mohammed Fasil — Quality governance for complex construction programs. I help large-scale projects move beyond compliance by building quality systems that actually work on site.">
-<meta property="og:title" content="Mohammed Fasil | The Quality Mindset">
-<meta property="og:description" content="Quality governance for complex construction programs. Fewer NCRs, faster approvals, stronger control over delivery.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://engineermohammedfasil.github.io">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<!DOCTYPE html><html class="scroll-smooth dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --primary: #000000;
-    --primary-container: #1a1a1a;
-    --on-primary: #f0ecdd;
-    --on-primary-container: rgba(240,236,221,.7);
-    --secondary: #fb5526;
-    --secondary-container: #fb5526;
-    --on-secondary-container: #000000;
-    --surface: #f0ecdd;
-    --surface-dim: #e0dac2;
-    --surface-container-low: #eae5d1;
-    --surface-container: #e5dfc9;
-    --surface-container-high: #dfd8bf;
-    --surface-container-highest: #d9d1b4;
-    --on-surface: #000000;
-    --on-surface-variant: #3a3a3a;
-    --outline: #7a746188;
-    --outline-variant: #d4cdb5;
-    --ff-headline: 'Manrope', sans-serif;
-    --ff-body: 'Inter', sans-serif;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--surface);
-    color: var(--on-surface);
-    font-family: var(--ff-body);
-    font-weight: 300;
-    line-height: 1.8;
-    overflow-x: hidden;
-  }
-
-  a { text-decoration: none; transition: opacity .3s, color .3s; }
-
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    background: rgba(240,236,221,.85);
-    backdrop-filter: blur(24px);
-    box-shadow: 0 20px 40px rgba(0,0,0,.08);
-    border-bottom: 1px solid rgba(0,0,0,.12);
-  }
-  .nav-inner {
-    display: flex; justify-content: space-between; align-items: center;
-    max-width: 1280px; margin: 0 auto; padding: 0 2.5rem; height: 5rem;
-  }
-  .nav-brand {
-    font-family: var(--ff-headline); font-size: 1.5rem; font-weight: 800;
-    letter-spacing: -.05em; color: var(--primary);
-  }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a {
-    font-family: var(--ff-headline); font-weight: 700; font-size: .875rem;
-    letter-spacing: -.01em; color: rgba(0,0,0,.55);
-    transition: color .3s;
-  }
-  .nav-links a:hover { color: var(--primary); }
-  .nav-links a.active {
-    color: var(--primary);
-    border-bottom: 2px solid var(--secondary);
-    padding-bottom: .25rem;
-  }
-  .nav-cta {
-    display: inline-block;
-    background: var(--primary); color: var(--on-primary);
-    font-family: var(--ff-headline); font-weight: 700; font-size: .875rem;
-    padding: .625rem 1.5rem; border-radius: .75rem;
-    transition: opacity .3s;
-  }
-  .nav-cta:hover { opacity: .8; }
-  .nav-toggle {
-    display: none; background: none; border: none; cursor: pointer;
-    color: var(--primary);
-  }
-  .nav-toggle .material-symbols-outlined { font-size: 1.5rem; }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: #f0ecdd;
-    display: flex; align-items: stretch;
-    padding: 0;
-    position: relative; overflow: hidden;
-  }
-  .hero-inner {
-    width: 100%;
-    display: grid; grid-template-columns: 1fr 42%; gap: 0; align-items: center;
-    position: relative; z-index: 1;
-    padding: 8rem 0 0 5vw;
-  }
-  .hero-eyebrow {
-    font-family: var(--ff-body); font-size: .75rem; font-weight: 500;
-    letter-spacing: .2em; text-transform: uppercase;
-    color: var(--primary); margin-bottom: 1.5rem;
-    opacity: 0; animation: fadeUp .6s ease forwards .1s;
-  }
-  .hero h1 {
-    font-family: var(--ff-headline); font-weight: 800;
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    line-height: .9; letter-spacing: -.04em;
-    color: var(--primary);
-    margin-bottom: 2rem;
-    opacity: 0; animation: fadeUp .6s ease forwards .25s;
-  }
-  .hero-subtitle {
-    font-family: var(--ff-body); font-weight: 300;
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--on-surface-variant); line-height: 1.8;
-    max-width: 36rem; margin-bottom: 2.5rem;
-    opacity: 0; animation: fadeUp .6s ease forwards .4s;
-  }
-  .hero-actions {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-    opacity: 0; animation: fadeUp .6s ease forwards .55s;
-    padding-bottom: 6rem;
-  }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: .5rem;
-    background: var(--secondary-container); color: var(--on-secondary-container);
-    font-family: var(--ff-headline); font-weight: 700; font-size: .9rem;
-    padding: .875rem 2rem; border-radius: .75rem; transition: opacity .3s;
-  }
-  .btn-primary:hover { opacity: .85; }
-  .btn-ghost {
-    display: inline-flex; align-items: center; gap: .5rem;
-    background: transparent; color: var(--primary);
-    font-family: var(--ff-headline); font-weight: 700; font-size: .9rem;
-    padding: .875rem 2rem; border-radius: .75rem;
-    border: 1px solid rgba(0,0,0,.25);
-    transition: background .3s;
-  }
-  .btn-ghost:hover { background: rgba(0,0,0,.06); }
-  /* Photo wrap: full height column, image sits flush at bottom */
-  .hero-photo-wrap {
-    opacity: 0; animation: fadeUp .6s ease forwards .3s;
-    align-self: stretch;
-    display: flex; align-items: flex-end; justify-content: center;
-    overflow: hidden;
-    min-height: 100vh;
-  }
-  .hero-photo {
-    width: 100%; height: 100%;
-    display: flex; align-items: flex-end; justify-content: center;
-  }
-  .hero-photo img {
-    width: 100%;
-    max-width: 520px;
-    height: auto;
-    display: block;
-  }
-  .hero-watermark {
-    position: absolute; right: -2rem; bottom: -4rem;
-    font-family: var(--ff-headline); font-weight: 800;
-    font-size: 40rem; color: rgba(0,0,0,.03);
-    line-height: 1; user-select: none; pointer-events: none;
-    letter-spacing: -.05em;
-  }
-
-  /* ── SECTION SHELL ── */
-  .section { padding: 8rem 2.5rem; }
-  .section-inner { max-width: 1280px; margin: 0 auto; }
-  .eyebrow-label {
-    font-family: var(--ff-body); font-size: .75rem; font-weight: 500;
-    letter-spacing: .2em; text-transform: uppercase;
-    color: var(--secondary); margin-bottom: 1.5rem; display: block;
-  }
-  .section-heading {
-    font-family: var(--ff-headline); font-weight: 800;
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--primary); letter-spacing: -.03em;
-    line-height: 1.1; margin-bottom: 1.5rem;
-  }
-  .section-sub {
-    font-size: 1.05rem; color: var(--on-surface-variant);
-    line-height: 1.85; max-width: 44rem; margin-bottom: 2.5rem;
-  }
-  .rule {
-    width: 6rem; height: 2px;
-    background: var(--secondary); margin-bottom: 2rem;
-  }
-
-  /* ── PURPOSE BAND ── */
-  .purpose-band {
-    background: #e5dfc9;
-    padding: 7rem 2.5rem;
-    text-align: center;
-  }
-  .purpose-text {
-    font-family: var(--ff-headline); font-weight: 800;
-    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
-    color: var(--primary); letter-spacing: -.03em;
-    line-height: 1.3; max-width: 680px; margin: 0 auto;
-  }
-  .purpose-text em { font-style: normal; color: var(--secondary); }
-
-  /* ── WHAT I DO ── */
-  .what-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-    align-items: start; margin-top: 4rem;
-  }
-  .service-list { list-style: none; }
-  .service-item {
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--outline-variant);
-    font-size: .95rem; color: var(--on-surface-variant);
-    line-height: 1.7; display: flex; gap: 1rem; align-items: flex-start;
-  }
-  .service-item:last-child { border-bottom: none; }
-  .service-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--secondary); margin-top: .7rem; flex-shrink: 0;
-  }
-
-  /* ── IMPACT ── */
-  .impact-section { background: var(--primary); }
-  .impact-section .section-heading { color: var(--on-primary); }
-  .impact-section .eyebrow-label { color: var(--on-primary-container); }
-  .impact-section .section-sub { color: var(--on-primary-container); }
-  .impact-bento {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px; background: rgba(240,236,221,.15);
-    border-radius: 1rem; overflow: hidden;
-    border: 1px solid rgba(240,236,221,.15);
-    margin-top: 3rem;
-  }
-  .impact-card {
-    background: rgba(240,236,221,.06);
-    padding: 2.5rem;
-    transition: background .3s;
-  }
-  .impact-card:hover { background: rgba(240,236,221,.12); }
-  .impact-num {
-    font-family: var(--ff-headline); font-weight: 800;
-    font-size: 3rem; color: var(--secondary-container);
-    line-height: 1; margin-bottom: .75rem; letter-spacing: -.04em;
-  }
-  .impact-label {
-    font-family: var(--ff-headline); font-weight: 700;
-    font-size: .95rem; color: var(--on-primary);
-    margin-bottom: .5rem;
-  }
-  .impact-desc { font-size: .8rem; color: var(--on-primary-container); line-height: 1.65; }
-
-  /* ── APPROACH ── */
-  .approach-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
-    margin-top: 3rem;
-  }
-  .approach-card {
-    background: var(--surface-container-low);
-    border: 1px solid var(--outline-variant);
-    border-radius: .75rem; padding: 2rem;
-    transition: border-color .3s, background .3s;
-    position: relative; overflow: hidden;
-  }
-  .approach-card::after {
-    content: ''; position: absolute; bottom: 0; left: 0;
-    width: 0; height: 2px; background: var(--secondary);
-    transition: width .4s;
-  }
-  .approach-card:hover { border-color: var(--secondary); background: var(--surface-container); }
-  .approach-card:hover::after { width: 100%; }
-  .approach-icon {
-    font-size: 2rem; color: var(--secondary);
-    margin-bottom: 1rem; display: block;
-  }
-  .approach-title {
-    font-family: var(--ff-headline); font-weight: 700;
-    font-size: 1rem; color: var(--primary); margin-bottom: .5rem;
-  }
-  .approach-body { font-size: .9rem; color: var(--on-surface-variant); line-height: 1.7; }
-
-  /* ── EXPERIENCE ── */
-  .exp-section { background: var(--surface-container-low); }
-  .exp-tags { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
-  .exp-tag {
-    background: var(--surface-container-highest);
-    color: var(--on-surface-variant);
-    font-family: var(--ff-body); font-size: .75rem; font-weight: 500;
-    letter-spacing: .08em; text-transform: uppercase;
-    padding: .4rem 1rem; border-radius: 999px;
-  }
-
-  /* ── CREDENTIALS ── */
-  .cred-bento {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px; background: var(--outline-variant);
-    border-radius: 1rem; overflow: hidden;
-    border: 1px solid var(--outline-variant);
-    margin-top: 3rem;
-  }
-  .cred-card {
-    background: var(--surface);
-    padding: 2.5rem;
-    transition: background .3s;
-    position: relative;
-  }
-  .cred-card::after {
-    content: ''; position: absolute; bottom: 0; left: 0;
-    width: 0; height: 2px; background: var(--secondary);
-    transition: width .4s;
-  }
-  .cred-card:hover { background: var(--surface-container-low); }
-  .cred-card:hover::after { width: 100%; }
-  .cred-icon { font-size: 2.5rem; color: var(--secondary); margin-bottom: 1.25rem; display: block; }
-  .cred-abbr {
-    font-family: var(--ff-headline); font-weight: 800;
-    font-size: 1.15rem; color: var(--primary);
-    margin-bottom: .25rem; letter-spacing: -.02em;
-  }
-  .cred-name { font-size: .875rem; color: var(--on-surface); margin-bottom: .2rem; font-weight: 400; }
-  .cred-issuer { font-size: .75rem; color: var(--on-surface-variant); margin-bottom: .75rem; }
-  .cred-verify {
-    font-size: .7rem; font-weight: 600; letter-spacing: .1em;
-    text-transform: uppercase; color: var(--secondary);
-    display: inline-flex; align-items: center; gap: .25rem;
-  }
-  .cred-verify:hover { color: var(--primary); }
-
-  /* ── CONTACT ── */
-  .contact-section {
-    background: var(--primary);
-    padding: 10rem 2.5rem;
-    text-align: center;
-    position: relative; overflow: hidden;
-  }
-  .contact-section h2 {
-    font-family: var(--ff-headline); font-weight: 800;
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    color: var(--on-primary); letter-spacing: -.04em;
-    line-height: 1.05; max-width: 800px; margin: 0 auto 3rem;
-  }
-  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-  .contact-link {
-    display: inline-flex; align-items: center; gap: .5rem;
-    border: 1px solid rgba(240,236,221,.25);
-    color: var(--on-primary-container);
-    font-family: var(--ff-body); font-size: .8rem; font-weight: 400;
-    padding: .625rem 1.25rem; border-radius: .5rem;
-    transition: border-color .3s, color .3s;
-  }
-  .contact-link:hover { border-color: var(--secondary-container); color: var(--secondary-container); }
-  .contact-link svg { width: 14px; height: 14px; fill: currentColor; }
-  .contact-watermark {
-    position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
-    font-family: var(--ff-headline); font-weight: 800;
-    font-size: 50rem; color: rgba(240,236,221,.04);
-    line-height: 1; user-select: none; pointer-events: none;
-    white-space: nowrap;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--primary);
-    padding: 3rem 2.5rem;
-    border-top: 1px solid rgba(240,236,221,.15);
-  }
-  .footer-inner {
-    max-width: 1280px; margin: 0 auto;
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
-  }
-  footer p { font-size: .75rem; color: rgba(240,236,221,.4); }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; padding: 8rem 1.5rem 0; }
-    .hero-photo-wrap { order: -1; min-height: 50vw; }
-    .hero-photo { justify-content: center; }
-    .hero-photo img { max-width: 280px; }
-    .what-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .impact-bento { grid-template-columns: repeat(2, 1fr); }
-    .approach-grid { grid-template-columns: 1fr; }
-    .cred-bento { grid-template-columns: repeat(2, 1fr); }
-    .insights-grid { grid-template-columns: 1fr !important; }
-  }
-  @media (max-width: 640px) {
-    .nav-links { display: none; }
-    .nav-cta { display: none; }
-    .nav-toggle { display: block; }
-    .nav-links.open {
-      display: flex; flex-direction: column;
-      position: absolute; top: 100%; left: 0; right: 0;
-      background: rgba(240,236,221,.97);
-      backdrop-filter: blur(20px);
-      padding: 1.5rem 2rem; gap: .75rem;
-      border-bottom: 1px solid var(--outline-variant);
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+      }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
     }
-    .section { padding: 5rem 1.5rem; }
-    .impact-bento { grid-template-columns: 1fr; }
-    .cred-bento { grid-template-columns: 1fr; }
-    /* hero padding handled by hero-inner on mobile */
-    .purpose-band { padding: 5rem 1.5rem; }
-  }
-</style>
-</head>
-<body>
-
-<!-- ── NAV ── -->
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="#" class="nav-brand">MF</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#what">What I Do</a></li>
-      <li><a href="#impact">Impact</a></li>
-      <li><a href="#approach">Approach</a></li>
-      <li><a href="#credentials">Credentials</a></li>
-      <li><a href="#insights">Insights</a></li>
-      <li><a href="#contact">Connect</a></li>
-    </ul>
-    <a href="mailto:mohammedfasilkk@gmail.com" class="nav-cta">Get in Touch</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-  </div>
+    ::-webkit-scrollbar { display: none; }
+    .font-zha {
+      font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+  </style>
+<link href="styles.css" rel="stylesheet">
+<style id="typography-color-scheme">
+    /* Accent color #fb5526 from uploaded index file applied to metrics, accents, and eyebrow tags */
+    #impact .text-5xl, #impact .lg\:text-6xl,
+    .text-\[\#8e9192\],
+    .text-neutral-400,
+    .eyebrow-label,
+    [class*="px-2.5"][class*="rounded-full"] {
+      color: #fb5526 !important;
+    }
+    /* Keep secondary/subtle body text aligned to clean readable charcoal or #3a3a3a where applicable or warm accent */
+    .text-neutral-400, p.text-neutral-400, .text-neutral-300 {
+      color: #c4c7c8 !important;
+    }
+    /* Emphasized accent numbers & stats in terracotta #fb5526 */
+    #impact .text-5xl,
+    #impact .lg\:text-6xl {
+      color: #fb5526 !important;
+    }
+    /* Section numbering pills and highlights */
+    span.rounded-full.bg-white\/10 {
+      color: #fb5526 !important;
+      border-color: rgba(251, 85, 38, 0.3) !important;
+    }
+    /* Accent highlights */
+    h1 span.text-\[\#9b9da0\] {
+      color: #fb5526 !important;
+    }
+    /* Card hover arrow & link accents */
+    a:hover, .group:hover .material-symbols-outlined {
+      color: #fb5526 !important;
+    }
+</style></head>
+<body class="bg-[#1a1a1a] font-zha text-[#efefef] antialiased selection:bg-white selection:text-black">
+<!-- TOP HEADER (Translucent ZHA minimalist nav) -->
+<header class="fixed top-0 left-0 right-0 w-full z-50 bg-[#1a1a1a]/80 backdrop-blur-md border-b border-white/10">
+<div class="h-20 w-full px-6 md:px-12 lg:px-16 flex items-center justify-between">
+<a class="flex items-baseline gap-3 group text-left" href="#hero">
+<span class="text-white text-[15px] font-semibold tracking-tight transition-opacity group-hover:opacity-70">Mohammed Fasil</span>
+<span class="text-[#636565] text-xs">/</span>
+<span class="text-[#8e9192] text-xs font-normal tracking-wide hidden md:inline">Quality Governance &amp; Engineering</span>
+</a>
+<div class="flex items-center gap-8">
+<nav class="hidden lg:flex items-center gap-7">
+<a class="text-xs text-[#8e9192] hover:text-white transition-colors tracking-wide py-1" href="#what">What I do</a>
+<a class="text-xs text-[#8e9192] hover:text-white transition-colors tracking-wide py-1" href="#impact">Impact</a>
+<a class="text-xs text-[#8e9192] hover:text-white transition-colors tracking-wide py-1" href="#approach">Approach</a>
+<a class="text-xs text-[#8e9192] hover:text-white transition-colors tracking-wide py-1" href="#typologies">Typologies</a>
+<a class="text-xs text-[#8e9192] hover:text-white transition-colors tracking-wide py-1" href="#credentials">Credentials</a>
+<a class="text-xs text-[#8e9192] hover:text-white transition-colors tracking-wide py-1" href="#insights">Insights</a>
+<a class="text-xs text-[#8e9192] hover:text-white transition-colors tracking-wide py-1" href="#contact">Contact</a>
 </nav>
-
-<!-- ── HERO ── -->
-<section class="hero" id="home">
-  <div class="hero-inner">
-    <div style="padding-top:2rem;">
-      <div class="hero-eyebrow">Mohammed Fasil</div>
-      <h1>Quality<br>Governance<br>for Complex<br>Programs</h1>
-      <p class="hero-subtitle">I help large-scale construction projects move beyond compliance — by building quality systems that actually work on site.</p>
-      <div class="hero-actions">
-        <a href="#impact" class="btn-primary">See Impact</a>
-        <a href="https://www.linkedin.com/in/engineermohammedfasil/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn</a>
-      </div>
-    </div>
-    <div class="hero-photo-wrap">
-      <div class="hero-photo">
-        <img src="photo.png" alt="Mohammed Fasil" />
-      </div>
-    </div>
-  </div>
-  <div class="hero-watermark" aria-hidden="true">MF</div>
-</section>
-
-<!-- ── PURPOSE BAND ── -->
-<div class="purpose-band reveal">
-  <p class="purpose-text">
-    Quality is not achieved by inspection alone.<br>
-    It is built through <em>systems</em>, <em>discipline</em>,<br>
-    and clarity in <em>execution.</em>
-  </p>
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black text-xs font-medium tracking-tight hover:bg-neutral-200 transition-colors" href="mailto:mohammedfasilkk@gmail.com">
+<span>Get in touch</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
 </div>
-
-<!-- ── WHAT I DO ── -->
-<section id="what" class="section">
-  <div class="section-inner">
-    <span class="eyebrow-label reveal">What I Do</span>
-    <div class="what-grid">
-      <div>
-        <h2 class="section-heading reveal">Quality issues on major projects are rarely caused by lack of procedures.</h2>
-        <div class="rule reveal"></div>
-        <p class="section-sub reveal">They happen when systems don't translate into execution. My work focuses on closing that gap.</p>
-      </div>
-      <ul class="service-list">
-        <li class="service-item reveal"><span class="service-dot"></span><span>Establishing ISO 9001-aligned quality management systems that are practical, not theoretical</span></li>
-        <li class="service-item reveal"><span class="service-dot"></span><span>Structuring submittal, inspection, and approval workflows for clarity and control</span></li>
-        <li class="service-item reveal"><span class="service-dot"></span><span>Driving NCR reduction through data-led root cause analysis</span></li>
-        <li class="service-item reveal"><span class="service-dot"></span><span>Building KPI dashboards that reflect real project performance</span></li>
-        <li class="service-item reveal"><span class="service-dot"></span><span>Aligning contractors, consultants, and PMC teams under a unified quality approach</span></li>
-      </ul>
-    </div>
-  </div>
+</div>
+</header>
+<main class="w-full pt-20 bg-[#1a1a1a] min-h-screen">
+<div class="flex flex-col w-full">
+<!-- SECTION 1: HERO (ZHA Monumental Editorial Grid) -->
+<section class="w-full border-b border-white/10" id="hero">
+<div class="grid grid-cols-1 lg:grid-cols-12 min-h-[640px] w-full">
+<!-- Left Column (approx 65% width) -->
+<div class="lg:col-span-8 p-6 md:p-12 lg:p-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10 bg-[#1a1a1a]">
+<div class="flex items-center gap-3 mb-12">
+<span class="inline-block px-3 py-1 rounded-full bg-white text-black text-[11px] font-medium tracking-wide">
+                Quality governance
+              </span>
+<span class="text-xs text-[#8e9192] tracking-wide">
+                Complex construction programs · 14 years experience
+              </span>
+</div>
+<div class="my-auto py-6 max-w-4xl">
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-normal tracking-[-0.035em] text-white leading-[1.06]">
+                Quality governance for <span class="font-light text-[#9b9da0]" style="color: rgb(251, 85, 38);">complex programs</span> and monumental assets.
+              </h1>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-y-3 pt-10 border-t border-white/10">
+<div class="text-xs text-[#8e9192] tracking-wide">
+                QA/QC Governance Lead · Complex infrastructure &amp; vertical assets
+              </div>
+<div class="text-xs text-white font-normal tracking-wide">
+                SAR 5.55B programme governance : Diriyah Development
+              </div>
+</div>
+</div>
+<!-- Right Column (35% width) -->
+<div class="lg:col-span-4 p-6 md:p-12 lg:p-12 flex flex-col justify-between bg-[#202020]">
+<div class="space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-white/10">
+<span class="text-xs text-[#8e9192]">Role specification</span>
+<span class="text-xs text-white font-medium">QA/QC Manager &amp; PMC Lead</span>
+</div>
+<div class="space-y-3 pt-2">
+<span class="text-xs text-[#8e9192] block font-medium">Curatorial &amp; executive brief</span>
+<p class="text-base text-neutral-300 font-light leading-relaxed">
+                  I help large-scale construction projects move beyond compliance by building quality systems that actually work on site. Fewer NCRs, faster approvals, and stronger control over delivery.
+                </p>
+</div>
+</div>
+<div class="pt-12 space-y-6">
+<div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-lg overflow-hidden">
+<div class="bg-[#262626] p-4">
+<span class="text-[11px] text-[#8e9192] block mb-1">Geography</span>
+<span class="text-sm md:text-base text-white font-medium">Makkah / GCC</span>
+</div>
+<div class="bg-[#262626] p-4">
+<span class="text-[11px] text-[#8e9192] block mb-1">Flagship scale</span>
+<span class="text-sm md:text-base text-white font-medium">SAR 5.55B value</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-3">
+<a class="group flex items-center justify-between flex-1 px-5 py-3.5 rounded-full bg-white text-black hover:bg-neutral-200 transition-colors text-left" href="#impact">
+<span class="text-xs font-semibold tracking-wide">Explore impact &amp; metrics</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-150 group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a aria-label="LinkedIn dispatch" class="group inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/20 text-white hover:border-white hover:bg-white/10 transition-colors shrink-0" href="https://www.linkedin.com/in/engineermohammedfasil/" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px]">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- ── IMPACT ── -->
-<section id="impact" class="section impact-section">
-  <div class="section-inner">
-    <span class="eyebrow-label reveal">Selected Impact</span>
-    <h2 class="section-heading reveal">Measurable results from structured systems</h2>
-    <div class="impact-bento">
-      <div class="impact-card reveal">
-        <div class="impact-num">60%</div>
-        <div class="impact-label">NCR Reduction</div>
-        <div class="impact-desc">Through structured trend analysis and contractor-specific corrective actions within 8 months</div>
-      </div>
-      <div class="impact-card reveal">
-        <div class="impact-num">70%</div>
-        <div class="impact-label">Quality Rejection Improvement</div>
-        <div class="impact-desc">By strengthening inspection and approval workflows through systematic pre-review</div>
-      </div>
-      <div class="impact-card reveal">
-        <div class="impact-num">93%</div>
-        <div class="impact-label">Submittal Volume Optimisation</div>
-        <div class="impact-desc">Transforming inefficient documentation into streamlined, decision-ready submissions</div>
-      </div>
-      <div class="impact-card reveal">
-        <div class="impact-num">5.55B</div>
-        <div class="impact-label">SAR Programme Value</div>
-        <div class="impact-desc">Quality governance across the Diriyah programme — infrastructure and 31 buildings within a UNESCO World Heritage context</div>
-      </div>
-    </div>
-  </div>
+<!-- SECTION 2: PURPOSE STATEMENT / CORE PHILOSOPHY -->
+<section class="w-full border-b border-white/10 bg-[#1a1a1a]">
+<div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+<div class="lg:col-span-3 p-6 md:p-10 flex flex-col justify-between bg-[#202020]">
+<div class="flex items-center gap-2">
+<span class="text-xs text-[#8e9192]">Core philosophy</span>
+</div>
+<div class="text-xs text-white tracking-wide pt-6" style="color: rgb(251, 85, 38);">
+              The Quality Mindset
+            </div>
+</div>
+<div class="lg:col-span-9 p-8 md:p-14 lg:p-16 flex items-center bg-[#1a1a1a]">
+<blockquote class="text-2xl md:text-3xl lg:text-4xl text-white font-light tracking-[-0.02em] leading-snug max-w-4xl">
+              "Quality is not achieved by inspection alone. It is built through systems, discipline, and clarity in execution."
+            </blockquote>
+</div>
+</div>
 </section>
-
-<!-- ── APPROACH ── -->
-<section id="approach" class="section">
-  <div class="section-inner">
-    <span class="eyebrow-label reveal">My Approach</span>
-    <h2 class="section-heading reveal">Most projects treat quality as a control function. I approach it as a system.</h2>
-    <div class="rule reveal"></div>
-    <div class="approach-grid">
-      <div class="approach-card reveal">
-        <span class="material-symbols-outlined approach-icon">analytics</span>
-        <div class="approach-title">Pattern Recognition</div>
-        <div class="approach-body">Looking beyond individual NCRs to identify systemic patterns across the programme</div>
-      </div>
-      <div class="approach-card reveal">
-        <span class="material-symbols-outlined approach-icon">security</span>
-        <div class="approach-title">Preventive Control</div>
-        <div class="approach-body">Shifting from reactive corrections to proactive, preventive quality control</div>
-      </div>
-      <div class="approach-card reveal">
-        <span class="material-symbols-outlined approach-icon">bar_chart_4_bars</span>
-        <div class="approach-title">Stakeholder Visibility</div>
-        <div class="approach-body">Creating clear visibility for stakeholders through structured, decision-ready reporting</div>
-      </div>
-      <div class="approach-card reveal">
-        <span class="material-symbols-outlined approach-icon">rocket_launch</span>
-        <div class="approach-title">Delivery-First Quality</div>
-        <div class="approach-body">Ensuring quality processes actively support delivery — not slow it down</div>
-      </div>
-    </div>
-  </div>
+<!-- SECTION 3: IMPACT & PROVEN METRICS (4 QUANTITATIVE STATS) -->
+<section class="w-full border-b border-white/10 bg-[#1a1a1a]" id="impact">
+<div class="px-6 md:px-12 lg:px-16 py-6 border-b border-white/10 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">01</span>
+<h2 class="text-base text-white font-medium tracking-tight">
+              Selected impact &amp; proven quantitative metrics
+            </h2>
+</div>
+<span class="text-xs text-[#8e9192] hidden sm:inline">
+            Measurable results from structured governance
+          </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+<!-- Stat 01 -->
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<div>
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs text-[#8e9192]">Metric 01</span>
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+</div>
+<div class="text-5xl lg:text-6xl text-white font-light tracking-tight my-2" style="color: rgb(251, 85, 38);">
+                60%
+              </div>
+<div class="text-sm text-white font-medium tracking-normal mb-3">
+                NCR reduction
+              </div>
+</div>
+<p class="text-xs text-neutral-400 font-light leading-relaxed pt-6 border-t border-white/10">
+              Structured trend analysis &amp; contractor-specific corrective action programs implemented within 8 months.
+            </p>
+</div>
+<!-- Stat 02 -->
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<div>
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs text-[#8e9192]">Metric 02</span>
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+</div>
+<div class="text-5xl lg:text-6xl text-white font-light tracking-tight my-2" style="color: rgb(251, 85, 38);">
+                70%
+              </div>
+<div class="text-sm text-white font-medium tracking-normal mb-3">
+                Rejection rate improvement
+              </div>
+</div>
+<p class="text-xs text-neutral-400 font-light leading-relaxed pt-6 border-t border-white/10">
+              Strengthening inspection &amp; approval workflows via systematic pre-review gates prior to formal consultant submittal.
+            </p>
+</div>
+<!-- Stat 03 -->
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<div>
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs text-[#8e9192]">Metric 03</span>
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+</div>
+<div class="text-5xl lg:text-6xl text-white font-light tracking-tight my-2" style="color: rgb(251, 85, 38);">
+                93%
+              </div>
+<div class="text-sm text-white font-medium tracking-normal mb-3">
+                Submittal volume optimisation
+              </div>
+</div>
+<p class="text-xs text-neutral-400 font-light leading-relaxed pt-6 border-t border-white/10">
+              Transforming bloated, inefficient documentation into lean, decision-ready contractor submissions.
+            </p>
+</div>
+<!-- Stat 04 -->
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<div>
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs text-[#8e9192]">Metric 04</span>
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+</div>
+<div class="text-5xl lg:text-6xl text-white font-light tracking-tight my-2" style="color: rgb(251, 85, 38);">
+                5.55B
+              </div>
+<div class="text-sm text-white font-medium tracking-normal mb-3">
+                SAR value governed
+              </div>
+</div>
+<p class="text-xs text-neutral-400 font-light leading-relaxed pt-6 border-t border-white/10">
+              Diriyah Company flagship heritage development — complete infrastructure and 31 vertical assets within a UNESCO context.
+            </p>
+</div>
+</div>
 </section>
-
-<!-- ── EXPERIENCE ── -->
-<section class="section exp-section">
-  <div class="section-inner">
-    <span class="eyebrow-label reveal">Experience</span>
-    <h2 class="section-heading reveal">14 years across the Gulf's most ambitious programmes</h2>
-    <div class="rule reveal"></div>
-    <p class="section-sub reveal">Currently serving as QA/QC Manager with a PMC on one of Saudi Arabia's flagship heritage developments, acting as the single point of quality governance across infrastructure and vertical assets.</p>
-    <div class="exp-tags reveal">
-      <span class="exp-tag">Airports &amp; Airside Infrastructure</span>
-      <span class="exp-tag">Metro &amp; Rail Systems</span>
-      <span class="exp-tag">Oil &amp; Gas Facilities</span>
-      <span class="exp-tag">Urban &amp; Cultural Developments</span>
-      <span class="exp-tag">Heritage Construction</span>
-    </div>
-  </div>
+<!-- SECTION 4: WHAT I DO / CORE CAPABILITIES -->
+<section class="w-full border-b border-white/10 bg-[#1a1a1a]" id="what">
+<div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+<!-- Left Column -->
+<div class="lg:col-span-5 p-8 md:p-12 lg:p-16 flex flex-col justify-between bg-[#1a1a1a]">
+<div class="space-y-6 max-w-lg">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">02</span>
+<span class="text-xs text-[#8e9192]">Core capabilities</span>
+</div>
+<h2 class="text-2xl md:text-3xl lg:text-4xl text-white font-light tracking-tight leading-snug">
+                Quality issues on major projects are rarely caused by lack of procedures — they happen when systems don't translate into execution.
+              </h2>
+<p class="text-sm md:text-base text-neutral-400 font-light leading-relaxed">
+                My work focuses on closing that execution gap across the entire program lifecycle, turning high-level compliance manuals into operational site discipline.
+              </p>
+</div>
+<div class="pt-12 border-t border-white/10">
+<span class="text-xs text-[#8e9192] block mb-1">Governance paradigm</span>
+<span class="text-sm text-white font-medium">Practical on-site implementation over theoretical binders</span>
+</div>
+</div>
+<!-- Right Column: Deliverables list -->
+<div class="lg:col-span-7 divide-y divide-white/10 bg-[#202020]">
+<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-[#262626] transition-colors duration-150">
+<span class="text-xs text-[#8e9192] pt-1">01</span>
+<div class="space-y-2">
+<h3 class="text-base text-white font-medium tracking-normal">
+                  ISO 9001-aligned quality management systems that work on site
+                </h3>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">
+                  Establishing rigorous, IRCA-compliant QMS architectures engineered specifically for active megaproject conditions rather than purely bureaucratic audits.
+                </p>
+</div>
+</div>
+<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-[#262626] transition-colors duration-150">
+<span class="text-xs text-[#8e9192] pt-1">02</span>
+<div class="space-y-2">
+<h3 class="text-base text-white font-medium tracking-normal">
+                  Structured submittal, inspection &amp; approval workflows
+                </h3>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">
+                  Designing multi-tiered review gates and pre-qualification checklists that eliminate document backlogs and give PMCs genuine control over site milestones.
+                </p>
+</div>
+</div>
+<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-[#262626] transition-colors duration-150">
+<span class="text-xs text-[#8e9192] pt-1">03</span>
+<div class="space-y-2">
+<h3 class="text-base text-white font-medium tracking-normal">
+                  Data-led NCR reduction &amp; root cause analysis
+                </h3>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">
+                  Applying Lean Six Sigma methodologies to deconstruct repetitive non-conformances, isolating structural causes before defects manifest in the field.
+                </p>
+</div>
+</div>
+<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-[#262626] transition-colors duration-150">
+<span class="text-xs text-[#8e9192] pt-1">04</span>
+<div class="space-y-2">
+<h3 class="text-base text-white font-medium tracking-normal">
+                  Live KPI dashboards that reflect real project performance
+                </h3>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">
+                  Building transparent, decision-grade analytics suites that provide real-time visibility to developers, consultants, and PMC executive leadership.
+                </p>
+</div>
+</div>
+<div class="p-8 lg:p-10 flex items-start gap-6 hover:bg-[#262626] transition-colors duration-150">
+<span class="text-xs text-[#8e9192] pt-1">05</span>
+<div class="space-y-2">
+<h3 class="text-base text-white font-medium tracking-normal">
+                  Cross-stakeholder alignment under unified quality governance
+                </h3>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">
+                  Harmonizing primary contractors, specialty sub-contractors, supervising consultants, and PMC authorities around a single accountable standard of delivery.
+                </p>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- ── CREDENTIALS ── -->
-<section id="credentials" class="section">
-  <div class="section-inner">
-    <span class="eyebrow-label reveal">Credentials</span>
-    <h2 class="section-heading reveal">Professional certifications &amp; registration</h2>
-    <p class="section-sub reveal">Industry-recognised certifications that define 14 years of specialised quality leadership.</p>
-    <div class="cred-bento">
-      <div class="cred-card reveal">
-        <span class="material-symbols-outlined cred-icon">workspace_premium</span>
-        <div class="cred-abbr">CQP MCQI</div>
-        <div class="cred-name">Chartered Quality Professional</div>
-        <div class="cred-issuer">CQI — The Chartered Quality Institute</div>
-        <a href="https://cqi.digitalmembership.co.uk/CQ26420E/mohammedfasilkottuvayalkuniyil48.php" target="_blank" rel="noopener" class="cred-verify">Verify →</a>
-      </div>
-      <div class="cred-card reveal">
-        <span class="material-symbols-outlined cred-icon">fact_check</span>
-        <div class="cred-abbr">CMQ/OE</div>
-        <div class="cred-name">Certified Manager of Quality / Organisational Excellence</div>
-        <div class="cred-issuer">American Society for Quality (ASQ)</div>
-        <a href="https://credentials.asq.org/826ef1a3-b586-4109-8cd8-1918de541140" target="_blank" rel="noopener" class="cred-verify">Verify →</a>
-      </div>
-      <div class="cred-card reveal">
-        <span class="material-symbols-outlined cred-icon">verified</span>
-        <div class="cred-abbr">ISO 9001:2015</div>
-        <div class="cred-name">Lead Auditor (IRCA Certified)</div>
-        <div class="cred-issuer">International Register of Certificated Auditors</div>
-      </div>
-      <div class="cred-card reveal">
-        <span class="material-symbols-outlined cred-icon">engineering</span>
-        <div class="cred-abbr">LSSGB</div>
-        <div class="cred-name">Lean Six Sigma Green Belt</div>
-        <div class="cred-issuer">TÜV SÜD</div>
-      </div>
-      <div class="cred-card reveal">
-        <span class="material-symbols-outlined cred-icon">badge</span>
-        <div class="cred-abbr">SCE</div>
-        <div class="cred-name">Saudi Council of Engineers — Registered Engineer</div>
-        <div class="cred-issuer">Saudi Council of Engineers</div>
-      </div>
-      <div class="cred-card reveal">
-        <span class="material-symbols-outlined cred-icon">school</span>
-        <div class="cred-abbr">Master's Degree</div>
-        <div class="cred-name">Remote Sensing &amp; GIS (Civil Engineering)</div>
-        <div class="cred-issuer">National Institute of Technology Karnataka</div>
-      </div>
-    </div>
-  </div>
+<!-- SECTION 5: METHODOLOGY & APPROACH -->
+<section class="w-full border-b border-white/10 bg-[#1a1a1a]" id="approach">
+<div class="px-6 md:px-12 lg:px-16 py-6 border-b border-white/10 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">03</span>
+<h2 class="text-base text-white font-medium tracking-tight">
+              Methodology &amp; systemic approach
+            </h2>
+</div>
+<span class="text-xs text-[#8e9192] hidden sm:inline">From reactive control to systemic reliability</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+<div class="p-8 lg:p-10 flex flex-col justify-between group hover:bg-[#202020] transition-colors duration-150">
+<div>
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs text-[#8e9192]">01 · Diagnostic</span>
+<span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white text-xs">01</span>
+</div>
+<h3 class="text-lg text-white font-normal mb-3">
+                Pattern recognition
+              </h3>
+<p class="text-xs text-neutral-400 font-light leading-relaxed">
+                Looking beyond individual NCRs to identify systemic patterns, recurrent contractor pinch points, and process vulnerabilities across the entire programme.
+              </p>
+</div>
+<div class="mt-8 pt-4 border-t border-white/10 text-[11px] text-[#8e9192]">
+              Systemic root cause
+            </div>
+</div>
+<div class="p-8 lg:p-10 flex flex-col justify-between group hover:bg-[#202020] transition-colors duration-150">
+<div>
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs text-[#8e9192]">02 · Prevention</span>
+<span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white text-xs">02</span>
+</div>
+<h3 class="text-lg text-white font-normal mb-3">
+                Preventive control
+              </h3>
+<p class="text-xs text-neutral-400 font-light leading-relaxed">
+                Shifting the operational momentum from reactive site corrections to proactive, preventive quality control gates embedded directly into work planning.
+              </p>
+</div>
+<div class="mt-8 pt-4 border-t border-white/10 text-[11px] text-[#8e9192]">
+              Proactive assurance
+            </div>
+</div>
+<div class="p-8 lg:p-10 flex flex-col justify-between group hover:bg-[#202020] transition-colors duration-150">
+<div>
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs text-[#8e9192]">03 · Transparency</span>
+<span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white text-xs">03</span>
+</div>
+<h3 class="text-lg text-white font-normal mb-3">
+                Stakeholder visibility
+              </h3>
+<p class="text-xs text-neutral-400 font-light leading-relaxed">
+                Creating crystal-clear visibility for stakeholders through structured, decision-ready reporting rather than dense and unread monthly pdf binders.
+              </p>
+</div>
+<div class="mt-8 pt-4 border-t border-white/10 text-[11px] text-[#8e9192]">
+              Decision-ready data
+            </div>
+</div>
+<div class="p-8 lg:p-10 flex flex-col justify-between group hover:bg-[#202020] transition-colors duration-150">
+<div>
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs text-[#8e9192]">04 · Execution</span>
+<span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white text-xs">04</span>
+</div>
+<h3 class="text-lg text-white font-normal mb-3">
+                Delivery-first quality
+              </h3>
+<p class="text-xs text-neutral-400 font-light leading-relaxed">
+                Ensuring quality processes actively support and accelerate project handover milestones — removing frictional bottlenecks instead of halting progress.
+              </p>
+</div>
+<div class="mt-8 pt-4 border-t border-white/10 text-[11px] text-[#8e9192]">
+              Programme velocity
+            </div>
+</div>
+</div>
 </section>
-
-<!-- ── INSIGHTS ── -->
-<section id="insights" class="section impact-section">
-  <div class="section-inner">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:3rem;">
-      <div>
-        <span class="eyebrow-label reveal" style="color:var(--on-primary-container);">The Quality Mindset</span>
-        <h2 class="section-heading reveal" style="color:var(--on-primary);margin-bottom:0;">Selected Writing</h2>
-      </div>
-      <a href="https://www.linkedin.com/in/engineermohammedfasil/" target="_blank" rel="noopener"
-         class="reveal"
-         style="display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ff-headline);font-weight:700;font-size:.875rem;color:var(--secondary-container);transition:opacity .3s;"
-         onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">
-        Follow on LinkedIn
-        <span class="material-symbols-outlined" style="font-size:1.1rem;">arrow_forward</span>
-      </a>
-    </div>
-
-    <div class="insights-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
-
-      <!-- Card 1 -->
-      <div class="reveal" style="cursor:pointer;" onclick="window.open('https://www.linkedin.com/posts/engineermohammedfasil_the-roi-of-quality-culture-mohammed-fasil-activity-7449326160926216193-178J','_blank')">
-        <div style="aspect-ratio:16/9;border-radius:.75rem;overflow:hidden;margin-bottom:1.5rem;position:relative;background:linear-gradient(135deg,#000000 0%,#1a1a1a 50%,#000000 100%);">
-          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.18;" viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
-            <circle cx="320" cy="40" r="120" fill="none" stroke="#fb5526" stroke-width="1"/>
-            <circle cx="320" cy="40" r="80" fill="none" stroke="#fb5526" stroke-width=".5"/>
-            <circle cx="320" cy="40" r="40" fill="none" stroke="#fb5526" stroke-width=".5"/>
-            <line x1="0" y1="180" x2="400" y2="60" stroke="#f0ecdd" stroke-width=".5"/>
-            <line x1="0" y1="225" x2="400" y2="100" stroke="#f0ecdd" stroke-width=".5"/>
-            <line x1="0" y1="140" x2="300" y2="0" stroke="#f0ecdd" stroke-width=".5"/>
-          </svg>
-          <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:1.25rem;">
-            <span style="font-family:var(--ff-headline);font-weight:800;font-size:2.5rem;color:rgba(251,85,38,.14);line-height:1;letter-spacing:-.04em;user-select:none;">ROI</span>
-          </div>
-          <span style="position:absolute;top:1rem;left:1rem;background:var(--secondary-container);color:var(--on-secondary-container);font-family:var(--ff-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .75rem;border-radius:999px;">Carousel</span>
+<!-- SECTION 6: TYPOLOGIES & ARCHITECTURAL VISUALS (ZHA EDITORIAL GALLERIES) -->
+<section class="w-full border-b border-white/10 bg-[#1a1a1a]" id="typologies">
+<div class="px-6 md:px-12 lg:px-16 py-6 border-b border-white/10 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">04</span>
+<h2 class="text-base text-white font-medium tracking-tight">
+              Complex programmes &amp; governed asset typologies
+            </h2>
+</div>
+<span class="text-xs text-[#8e9192] hidden sm:inline">Field deployment context</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+<!-- Card 1 -->
+<article class="group flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<div>
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-neutral-900 border-b border-white/10">
+<img alt="High-contrast monochrome black and white architectural photography, parametric pavilion structure with sweeping fluid curved concrete and steel canopy, minimalist editorial style, stark shadows and bright white concrete, Zaha Hadid style architectural form, sharp focus, 8k" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ALJJyrAEmgVpHubuWTtJO-mIpeMFI86ZH4MWcZ9Q3qSZ6K-XFr4MXte12yALBNSpDI53W1HHUo7T2DMtJy2eP1Wm7FqwQevNKwzofnqp7K1B7-epkv5zrfSnYGwczX1SAnsu-VMemeqsLAAuTQ_xMDAaUbjT1Toq9oHRg59FBFh_Ocbvpuwf_OAi3qZG1zLYTYkiNDdCNDhujlfiQ7mZz_-Zm9xbmTIPYNmWwaBUkhNGtaD2">
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-white text-[11px] font-medium tracking-tight border border-white/15">
+                    Diriyah heritage masterplan
+                  </span>
+</div>
+</div>
+<div class="p-8 space-y-3">
+<div class="text-xs text-[#8e9192]">Typology 01 · Heritage &amp; civic</div>
+<h3 class="text-xl text-white font-normal tracking-tight">
+                  Heritage conservation &amp; 31 vertical assets
+                </h3>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">
+                  Quality assurance and governance across 31 individual vertical assets and extensive infrastructure in a UNESCO World Heritage context, valued at 5.55B SAR.
+                </p>
+</div>
+</div>
+<div class="p-8 pt-0">
+<div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-[#8e9192]">
+<span>Diriyah Company · PMC Governance</span>
+<span class="material-symbols-outlined text-[16px] text-white">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<div>
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-neutral-900 border-b border-white/10">
+<img alt="High-contrast monochrome black and white architectural photography of a dramatic cantilevered geometric cultural center, sharp angular planes intersecting with deep shadows, minimalist architectural monograph style, sharp lines" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ALJJyrA0mxPRYIgZPPQV3GgvB0sc_FOqVMHNVwrcHqIhWk8U74A8DQN9PWzhiK6fOkz5RcBvYpo8F7VEhmCZC5eiSu6x8nnWtYxEfMA95-z7rKG1Z5HEMY3Y39QI0UXqlHzPEEM4Ek3X0ZYjQSE4YKTx3TLjiE1Pbp-539IVbA6nOQW0ln8MxSQ9bnsXYcOm_JQKbadASb90IRu8yqZQ9Rf7GJw6GBePWadzPmlTNElajItQ">
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-white text-[11px] font-medium tracking-tight border border-white/15">
+                    Airports &amp; metro systems
+                  </span>
+</div>
+</div>
+<div class="p-8 space-y-3">
+<div class="text-xs text-[#8e9192]">Typology 02 · Transport &amp; transit</div>
+<h3 class="text-xl text-white font-normal tracking-tight">
+                  Airside infrastructure &amp; rail networks
+                </h3>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">
+                  Rigorous inspection regimens and material compliance auditing across high-traffic airfield pavement, subterranean transit tunnels, and heavy transit stations.
+                </p>
+</div>
+</div>
+<div class="p-8 pt-0">
+<div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-[#8e9192]">
+<span>Critical transit · 14 years experience</span>
+<span class="material-symbols-outlined text-[16px] text-white">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-200">
+<div>
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-neutral-900 border-b border-white/10">
+<img alt="High-contrast black and white architectural photography of a faceted geometric glass and steel atrium facade, rhythmic louvers and algorithmic tectonic patterns, editorial architectural archive aesthetic" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ALJJyrCm5Pygo9-DexNPDZB8bHtc8OZX9MzZ1L7LkG664QZpghJIS4FHxYEfkq4lWjIyTzP90WAwMIX2zzzXgwOdO7BP5yQCMHxuD6Ck8nEeOdMDqEcUmTFkBgyK5MkGnK7rg6W8cb6ouvlwg-lVEVIEM6FsI64sGq8Hkcq0gaSryZ2WSr8FH4HEA5UGhjvPhOJH5bKEw5OCf_wjZjQFA8BFVvGWcYvQmuDrib3B1A91JPZ_">
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-white text-[11px] font-medium tracking-tight border border-white/15">
+                    Industrial &amp; urban
+                  </span>
+</div>
+</div>
+<div class="p-8 space-y-3">
+<div class="text-xs text-[#8e9192]">Typology 03 · Energy &amp; facilities</div>
+<h3 class="text-xl text-white font-normal tracking-tight">
+                  Industrial envelopes &amp; complex MEP
+                </h3>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">
+                  Quality surveillance over severe-duty mechanical packages, high-pressure piping assemblies, and mission-critical industrial installations across Saudi Arabia.
+                </p>
+</div>
+</div>
+<div class="p-8 pt-0">
+<div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-[#8e9192]">
+<span>GCC industrial megasystems</span>
+<span class="material-symbols-outlined text-[16px] text-white">arrow_forward</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION 7: CREDENTIALS & ACCREDITATIONS (ZHA CLEAN BENTO GRID) -->
+<section class="w-full border-b border-white/10 bg-[#1a1a1a]" id="credentials">
+<div class="px-6 md:px-12 lg:px-16 py-6 border-b border-white/10 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">05</span>
+<h2 class="text-base text-white font-medium tracking-tight">
+              Professional credentials &amp; accreditations
+            </h2>
+</div>
+<span class="text-xs text-[#8e9192] hidden sm:inline">Verified international standards</span>
+</div>
+<!-- 6-Credential Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 border-b border-white/10">
+<!-- Credential 1 -->
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-150">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="text-2xl text-white font-light tracking-tight">CQP MCQI</span>
+<span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white text-xs">UK</span>
+</div>
+<h3 class="text-base text-white font-medium mb-1">
+                Chartered Quality Professional
+              </h3>
+<p class="text-xs text-neutral-400 font-light mb-6">
+                CQI — The Chartered Quality Institute (United Kingdom)
+              </p>
+</div>
+<div class="pt-4 border-t border-white/10">
+<a class="inline-flex items-center gap-1.5 text-xs text-white hover:text-neutral-300 font-medium tracking-tight" href="https://cqi.digitalmembership.co.uk/CQ26420E/mohammedfasilkottuvayalkuniyil48.php" rel="noopener" target="_blank" style="color: rgb(251, 85, 38);">
+<span>Verify credential</span>
+<span class="material-symbols-outlined text-[13px]">north_east</span>
+</a>
+</div>
+</div>
+<!-- Credential 2 -->
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-150">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="text-2xl text-white font-light tracking-tight">CMQ/OE</span>
+<span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white text-xs">US</span>
+</div>
+<h3 class="text-base text-white font-medium mb-1">
+                Certified Manager of Quality / Organisational Excellence
+              </h3>
+<p class="text-xs text-neutral-400 font-light mb-6">
+                American Society for Quality (ASQ)
+              </p>
+</div>
+<div class="pt-4 border-t border-white/10">
+<a class="inline-flex items-center gap-1.5 text-xs text-white hover:text-neutral-300 font-medium tracking-tight" href="https://credentials.asq.org/826ef1a3-b586-4109-8cd8-1918de541140" rel="noopener" target="_blank" style="color: rgb(251, 85, 38);">
+<span>Verify credential</span>
+<span class="material-symbols-outlined text-[13px]">north_east</span>
+</a>
+</div>
+</div>
+<!-- Credential 3 -->
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-150">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="text-2xl text-white font-light tracking-tight">ISO 9001:2015</span>
+<span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white text-xs">ISO</span>
+</div>
+<h3 class="text-base text-white font-medium mb-1">
+                Lead Auditor (IRCA Certified)
+              </h3>
+<p class="text-xs text-neutral-400 font-light mb-6">
+                International Register of Certificated Auditors
+              </p>
+</div>
+<div class="pt-4 border-t border-white/10">
+<span class="text-xs text-[#8e9192]">Audit accredited</span>
+</div>
+</div>
+</div>
+<!-- Credential Row 2 -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+<!-- Credential 4 -->
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-150">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="text-2xl text-white font-light tracking-tight">LSSGB</span>
+<span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white text-xs">6σ</span>
+</div>
+<h3 class="text-base text-white font-medium mb-1">
+                Lean Six Sigma Green Belt
+              </h3>
+<p class="text-xs text-neutral-400 font-light mb-6">
+                TÜV SÜD — Process Optimization &amp; Statistical Quality Control
+              </p>
+</div>
+<div class="pt-4 border-t border-white/10">
+<span class="text-xs text-[#8e9192]">Certified practitioner</span>
+</div>
+</div>
+<!-- Credential 5 -->
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-150">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="text-2xl text-white font-light tracking-tight">SCE</span>
+<span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white text-xs">KSA</span>
+</div>
+<h3 class="text-base text-white font-medium mb-1">
+                Registered Engineer
+              </h3>
+<p class="text-xs text-neutral-400 font-light mb-6">
+                Saudi Council of Engineers (Kingdom of Saudi Arabia)
+              </p>
+</div>
+<div class="pt-4 border-t border-white/10">
+<span class="text-xs text-[#8e9192]">Regulatory license</span>
+</div>
+</div>
+<!-- Credential 6 -->
+<div class="p-8 lg:p-10 flex flex-col justify-between bg-[#1a1a1a] hover:bg-[#202020] transition-colors duration-150">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="text-2xl text-white font-light tracking-tight">M.Tech</span>
+<span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white text-xs">NITK</span>
+</div>
+<h3 class="text-base text-white font-medium mb-1">
+                Remote Sensing &amp; GIS (Civil)
+              </h3>
+<p class="text-xs text-neutral-400 font-light mb-6">
+                National Institute of Technology Karnataka (NITK Surathkal)
+              </p>
+</div>
+<div class="pt-4 border-t border-white/10">
+<span class="text-xs text-[#8e9192]">Master of Technology</span>
+</div>
+</div>
+</div>
+<!-- Sectors Ribbon -->
+<div class="p-6 md:px-12 lg:px-16 bg-[#202020] border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<span class="text-xs text-[#8e9192] shrink-0">Sectors governed:</span>
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-[#262626]">Airports &amp; airside</span>
+<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-[#262626]">Metro &amp; rail systems</span>
+<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-[#262626]">Oil &amp; gas facilities</span>
+<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-[#262626]">Urban &amp; cultural developments</span>
+<span class="px-3 py-1 rounded-full text-xs text-neutral-300 border border-white/10 bg-[#262626]">Heritage construction</span>
+</div>
+</div>
+</section>
+<!-- SECTION 8: SELECTED WRITING & INSIGHTS (ZHA EDITORIAL DISPATCH TABLE) -->
+<section class="w-full border-b border-white/10 bg-[#1a1a1a]" id="insights">
+<div class="px-6 md:px-12 lg:px-16 py-6 border-b border-white/10 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">06</span>
+<h2 class="text-base text-white font-medium tracking-tight">
+              Selected writing &amp; insights — The Quality Mindset
+            </h2>
+</div>
+<a class="inline-flex items-center gap-1.5 text-xs text-neutral-300 hover:text-white transition-colors" href="https://www.linkedin.com/in/engineermohammedfasil/" rel="noopener" target="_blank" style="color: rgb(251, 85, 38);">
+<span>Follow on LinkedIn</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</a>
+</div>
+<!-- Table Header (Desktop Only) -->
+<div class="hidden md:grid grid-cols-12 px-6 md:px-12 lg:px-16 py-3 bg-[#202020] border-b border-white/10 text-xs text-[#8e9192]">
+<div class="col-span-1">Index</div>
+<div class="col-span-2">Date &amp; format</div>
+<div class="col-span-6">Essay title &amp; synthesis</div>
+<div class="col-span-2">Domain</div>
+<div class="col-span-1 text-right">Dispatch</div>
+</div>
+<!-- Table Rows -->
+<div class="divide-y divide-white/10">
+<!-- Row 1 -->
+<a class="group grid grid-cols-1 md:grid-cols-12 items-baseline md:items-center px-6 md:px-12 lg:px-16 py-6 hover:bg-[#202020] transition-colors duration-150 gap-y-2" href="https://www.linkedin.com/posts/engineermohammedfasil_the-roi-of-quality-culture-mohammed-fasil-activity-7449326160926216193-178J" rel="noopener" target="_blank">
+<div class="md:col-span-1 text-xs text-[#8e9192]">
+              #01
+            </div>
+<div class="md:col-span-2 text-xs text-neutral-400">
+              Apr 13, 2026 · Carousel
+            </div>
+<div class="md:col-span-6 pr-6">
+<span class="text-base text-white font-normal group-hover:underline underline-offset-4 block">
+                The ROI of quality culture
+              </span>
+<span class="text-xs text-[#8e9192] block pt-1 font-light">
+                "You don't lose quality in one big decision. You lose it in small ones."
+              </span>
+</div>
+<div class="md:col-span-2 text-xs text-[#8e9192]">
+              Culture &amp; governance
+            </div>
+<div class="md:col-span-1 flex items-center justify-start md:justify-end">
+<span class="w-8 h-8 rounded-full border border-white/20 group-hover:border-white group-hover:bg-white group-hover:text-black flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</span>
+</div>
+</a>
+<!-- Row 2 -->
+<a class="group grid grid-cols-1 md:grid-cols-12 items-baseline md:items-center px-6 md:px-12 lg:px-16 py-6 hover:bg-[#202020] transition-colors duration-150 gap-y-2" href="https://www.linkedin.com/posts/engineermohammedfasil_qualitymanagement-qaqc-construction-activity-7447190868899401728-s7xe" rel="noopener" target="_blank">
+<div class="md:col-span-1 text-xs text-[#8e9192]">
+              #02
+            </div>
+<div class="md:col-span-2 text-xs text-neutral-400">
+              Apr 07, 2026 · Post
+            </div>
+<div class="md:col-span-6 pr-6">
+<span class="text-base text-white font-normal group-hover:underline underline-offset-4 block">
+                Closing NCRs is not the win you think it is
+              </span>
+<span class="text-xs text-[#8e9192] block pt-1 font-light">
+                "I already closed 12 NCRs this week." He said it like it was a win.
+              </span>
+</div>
+<div class="md:col-span-2 text-xs text-[#8e9192]">
+              NCR systems &amp; metrics
+            </div>
+<div class="md:col-span-1 flex items-center justify-start md:justify-end">
+<span class="w-8 h-8 rounded-full border border-white/20 group-hover:border-white group-hover:bg-white group-hover:text-black flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</span>
+</div>
+</a>
+<!-- Row 3 -->
+<a class="group grid grid-cols-1 md:grid-cols-12 items-baseline md:items-center px-6 md:px-12 lg:px-16 py-6 hover:bg-[#202020] transition-colors duration-150 gap-y-2" href="https://www.linkedin.com/posts/engineermohammedfasil_quality-manager-mindset-mohammed-fasil-activity-7445327165887430656-nqUl" rel="noopener" target="_blank">
+<div class="md:col-span-1 text-xs text-[#8e9192]">
+              #03
+            </div>
+<div class="md:col-span-2 text-xs text-neutral-400">
+              Apr 06, 2026 · Carousel
+            </div>
+<div class="md:col-span-6 pr-6">
+<span class="text-base text-white font-normal group-hover:underline underline-offset-4 block">
+                The quality manager mindset shift
+              </span>
+<span class="text-xs text-[#8e9192] block pt-1 font-light">
+                If you're trying to grow from QA/QC Engineer to Quality Manager — this is the shift nobody explains.
+              </span>
+</div>
+<div class="md:col-span-2 text-xs text-[#8e9192]">
+              Leadership evolution
+            </div>
+<div class="md:col-span-1 flex items-center justify-start md:justify-end">
+<span class="w-8 h-8 rounded-full border border-white/20 group-hover:border-white group-hover:bg-white group-hover:text-black flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</span>
+</div>
+</a>
+</div>
+</section>
+<!-- SECTION 9: CONTACT & ENGAGEMENT PROTOCOL -->
+<section class="w-full bg-[#1a1a1a]" id="contact">
+<div class="px-6 md:px-12 lg:px-16 py-20 flex flex-col lg:flex-row lg:items-center justify-between gap-12">
+<div class="space-y-4 max-w-2xl">
+<span class="px-2.5 py-0.5 rounded-full bg-white/10 text-white text-[11px] font-medium" style="color: rgb(251, 85, 38);">07 · Engagement protocol</span>
+<h3 class="text-3xl md:text-5xl text-white font-light tracking-tight leading-tight">
+              Let's build stronger quality performance together.
+            </h3>
+<p class="text-sm md:text-base text-neutral-400 font-light leading-relaxed">
+              Advising PMC leadership, sovereign developers, and engineering consortia delivering complex megaprojects across Saudi Arabia and the GCC.
+            </p>
+<p class="text-xs text-[#8e9192] pt-1">
+              Quality governance for complex construction programs, megaprojects, and heritage developments.
+            </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 shrink-0">
+<a class="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-white text-black hover:bg-neutral-200 transition-colors" href="mailto:mohammedfasilkk@gmail.com">
+<span class="text-xs font-semibold tracking-wide">Direct inquiry</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-150 group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a class="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors" href="https://www.linkedin.com/in/engineermohammedfasil/" rel="noopener" target="_blank">
+<span class="text-xs font-semibold tracking-wide">LinkedIn profile</span>
+<span class="material-symbols-outlined text-[16px] transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">north_east</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="w-full bg-[#141414] border-t border-white/10 mt-auto">
+<div class="w-full px-6 md:px-12 lg:px-16 py-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="flex flex-col justify-between space-y-6 md:border-r md:border-white/10 md:pr-12">
+<div class="space-y-2">
+<span class="text-xs text-[#8e9192] block">Contact coordinates</span>
+<a class="text-lg md:text-xl text-white hover:underline underline-offset-4 block font-light" href="mailto:mohammedfasilkk@gmail.com">
+            mohammedfasilkk@gmail.com
+          </a>
+<p class="text-xs text-neutral-400">
+            Makkah, Kingdom of Saudi Arabia — GCC
+          </p>
+</div>
+<div class="text-xs text-[#8e9192]">
+          CQP MCQI · CMQ/OE · IRCA ISO 9001 Lead Auditor · SCE Registered
         </div>
-        <span style="font-family:var(--ff-body);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--on-primary-container);display:block;margin-bottom:.75rem;">Apr 13, 2026</span>
-        <h3 style="font-family:var(--ff-headline);font-weight:700;font-size:1.2rem;color:var(--on-primary);line-height:1.3;margin-bottom:.75rem;transition:color .3s;"
-            onmouseover="this.style.color='var(--secondary-container)'" onmouseout="this.style.color='var(--on-primary)'">
-          The ROI of Quality Culture
-        </h3>
-        <p style="font-size:.875rem;color:var(--on-primary-container);line-height:1.75;margin-bottom:1.25rem;">
-          You don't lose quality in one big decision. You lose it in small ones.
-        </p>
-        <div style="height:1px;background:rgba(240,236,221,.2);transition:background .3s;"
-             onmouseover="this.style.background='var(--secondary-container)'" onmouseout="this.style.background='rgba(240,236,221,.2)'"></div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="reveal" style="cursor:pointer;" onclick="window.open('https://www.linkedin.com/posts/engineermohammedfasil_qualitymanagement-qaqc-construction-activity-7447190868899401728-s7xe','_blank')">
-        <div style="aspect-ratio:16/9;border-radius:.75rem;overflow:hidden;margin-bottom:1.5rem;position:relative;background:linear-gradient(135deg,#000000 0%,#1a1a1a 50%,#000000 100%);">
-          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.18;" viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
-            <rect x="60" y="40" width="280" height="145" fill="none" stroke="#f0ecdd" stroke-width=".75"/>
-            <rect x="80" y="60" width="240" height="105" fill="none" stroke="#f0ecdd" stroke-width=".5"/>
-            <line x1="60" y1="112" x2="340" y2="112" stroke="#fb5526" stroke-width=".75"/>
-            <line x1="140" y1="40" x2="140" y2="185" stroke="#f0ecdd" stroke-width=".5"/>
-            <line x1="220" y1="40" x2="220" y2="185" stroke="#f0ecdd" stroke-width=".5"/>
-            <line x1="300" y1="40" x2="300" y2="185" stroke="#f0ecdd" stroke-width=".5"/>
-          </svg>
-          <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:1.25rem;">
-            <span style="font-family:var(--ff-headline);font-weight:800;font-size:2.5rem;color:rgba(251,85,38,.14);line-height:1;letter-spacing:-.04em;user-select:none;">NCR</span>
-          </div>
-          <span style="position:absolute;top:1rem;left:1rem;background:var(--secondary-container);color:var(--on-secondary-container);font-family:var(--ff-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .75rem;border-radius:999px;">Post</span>
-        </div>
-        <span style="font-family:var(--ff-body);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--on-primary-container);display:block;margin-bottom:.75rem;">Apr 7, 2026</span>
-        <h3 style="font-family:var(--ff-headline);font-weight:700;font-size:1.2rem;color:var(--on-primary);line-height:1.3;margin-bottom:.75rem;transition:color .3s;"
-            onmouseover="this.style.color='var(--secondary-container)'" onmouseout="this.style.color='var(--on-primary)'">
-          Closing NCRs Is Not the Win You Think It Is
-        </h3>
-        <p style="font-size:.875rem;color:var(--on-primary-container);line-height:1.75;margin-bottom:1.25rem;">
-          "I already closed 12 NCRs this week." He said it like it was a win.
-        </p>
-        <div style="height:1px;background:rgba(240,236,221,.2);transition:background .3s;"
-             onmouseover="this.style.background='var(--secondary-container)'" onmouseout="this.style.background='rgba(240,236,221,.2)'"></div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="reveal" style="cursor:pointer;" onclick="window.open('https://www.linkedin.com/posts/engineermohammedfasil_quality-manager-mindset-mohammed-fasil-activity-7445327165887430656-nqUl','_blank')">
-        <div style="aspect-ratio:16/9;border-radius:.75rem;overflow:hidden;margin-bottom:1.5rem;position:relative;background:linear-gradient(135deg,#1a1a1a 0%,#000000 50%,#000000 100%);">
-          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.18;" viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice">
-            <path d="M 40 180 L 120 80 L 200 130 L 280 50 L 360 90" fill="none" stroke="#fb5526" stroke-width="1.5"/>
-            <path d="M 40 200 L 120 100 L 200 150 L 280 70 L 360 110" fill="none" stroke="#f0ecdd" stroke-width=".5"/>
-            <circle cx="120" cy="80" r="4" fill="#fb5526" opacity=".6"/>
-            <circle cx="200" cy="130" r="4" fill="#fb5526" opacity=".6"/>
-            <circle cx="280" cy="50" r="4" fill="#fb5526" opacity=".6"/>
-            <line x1="40" y1="30" x2="40" y2="200" stroke="#f0ecdd" stroke-width=".5"/>
-            <line x1="40" y1="200" x2="370" y2="200" stroke="#f0ecdd" stroke-width=".5"/>
-          </svg>
-          <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:1.25rem;">
-            <span style="font-family:var(--ff-headline);font-weight:800;font-size:2rem;color:rgba(251,85,38,.14);line-height:1;letter-spacing:-.04em;user-select:none;">MINDSET</span>
-          </div>
-          <span style="position:absolute;top:1rem;left:1rem;background:var(--secondary-container);color:var(--on-secondary-container);font-family:var(--ff-body);font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .75rem;border-radius:999px;">Carousel</span>
-        </div>
-        <span style="font-family:var(--ff-body);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--on-primary-container);display:block;margin-bottom:.75rem;">Apr 6, 2026</span>
-        <h3 style="font-family:var(--ff-headline);font-weight:700;font-size:1.2rem;color:var(--on-primary);line-height:1.3;margin-bottom:.75rem;transition:color .3s;"
-            onmouseover="this.style.color='var(--secondary-container)'" onmouseout="this.style.color='var(--on-primary)'">
-          The Quality Manager Mindset Shift
-        </h3>
-        <p style="font-size:.875rem;color:var(--on-primary-container);line-height:1.75;margin-bottom:1.25rem;">
-          If you're trying to grow from QA/QC Engineer to Quality Manager — this is the shift nobody explains.
-        </p>
-        <div style="height:1px;background:rgba(240,236,221,.2);transition:background .3s;"
-             onmouseover="this.style.background='var(--secondary-container)'" onmouseout="this.style.background='rgba(240,236,221,.2)'"></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── CONTACT ── -->
-<section id="contact" class="contact-section">
-  <div style="position:relative;z-index:1;">
-    <span class="eyebrow-label reveal" style="color:rgba(240,236,221,.7);">Let's Connect</span>
-    <h2 class="reveal">Let's Build Stronger Quality Performance Together.</h2>
-    <div class="contact-links reveal">
-      <a href="https://www.linkedin.com/in/engineermohammedfasil/" target="_blank" rel="noopener" class="contact-link">
-        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
-      <a href="mailto:mohammedfasilkk@gmail.com" class="contact-link">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        Email
-      </a>
-    </div>
-  </div>
-  <div class="contact-watermark" aria-hidden="true">MF</div>
-</section>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-inner">
-    <p>© 2026 Mohammed Fasil — The Quality Mindset</p>
-    <p style="font-size:.75rem;color:rgba(240,236,221,.4);">engineermohammedfasil.github.io</p>
-  </div>
+</div>
+<div class="flex flex-col justify-between space-y-6 md:pl-12">
+<div class="space-y-2">
+<span class="text-xs text-[#8e9192] block">Repositories &amp; verification</span>
+<div class="flex flex-wrap items-center gap-6">
+<a class="text-xs text-white hover:text-neutral-400 transition-colors" href="https://www.linkedin.com/in/engineermohammedfasil/" rel="noopener" target="_blank">LinkedIn</a>
+<a class="text-xs text-white hover:text-neutral-400 transition-colors" href="mailto:mohammedfasilkk@gmail.com">Email</a>
+<a class="text-xs text-white hover:text-neutral-400 transition-colors" href="https://cqi.digitalmembership.co.uk/CQ26420E/mohammedfasilkottuvayalkuniyil48.php" rel="noopener" target="_blank" style="color: rgb(251, 85, 38);">CQI Verification</a>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-6 border-t border-white/10">
+<span class="text-xs text-neutral-500">© 2026 Mohammed Fasil — The Quality Mindset</span>
+<span class="text-xs text-neutral-500">engineermohammedfasil.github.io</span>
+</div>
+</div>
+</div>
 </footer>
 
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const navLinks  = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    navToggle.querySelector('span').textContent =
-      navLinks.classList.contains('open') ? 'close' : 'menu';
-  });
 
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (!target) return;
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      navLinks.classList.remove('open');
-      navToggle.querySelector('span').textContent = 'menu';
-    });
-  });
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: .1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  // ── NAV SCROLL-SPY ──
-  const navAnchorLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
-  const navSections = navAnchorLinks
-    .map(a => document.querySelector(a.getAttribute('href')))
-    .filter(Boolean);
-
-  function setActiveNavLink(id) {
-    navAnchorLinks.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + id);
-    });
-  }
-
-  const navSpyObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) setActiveNavLink(entry.target.id);
-    });
-  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-
-  navSections.forEach(section => navSpyObserver.observe(section));
-</script>
-</body>
-</html>
+</body></html>
